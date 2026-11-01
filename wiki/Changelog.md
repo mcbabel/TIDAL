@@ -1,3 +1,9 @@
+#### 11-01-2026 (App OAuth clients)
+  - Used the OAuth client credentials shipped in the Android app (`assets/secrets.properties`, ~24 variants) to verify the login and token flows live: client_credentials, device authorization (TV/FireTV only), device-code login, refresh_token, update_client, logout
+  - Found: the phone client is not a limited-input client (no device flow); offline authorization is gated by the native app (403 even with a real TV token)
+  - Updated: Device Authorization, oAuth Token, Client Credentials, Authorization Code + PKCE, API Keys, Offline (Android), Android overview, Test Report
+  - The actual client ids/secrets are deliberately not published (API Keys policy)
+
 #### 11-01-2026 (Android app)
   - Analysed the TIDAL Android app 2.215.0 (Play Store build): hosts, headers, interceptors, login, Play Integrity, see [Android](Android)
   - [List of all Android Endpoints](android-endpoints): 271 private operations with live test status; the 390 official API operations of the app are all in the public spec

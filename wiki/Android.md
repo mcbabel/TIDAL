@@ -63,3 +63,22 @@ The v2 page endpoints (`artist/{id}`, `home/feed/{vibe}`, `…/view-all`, `artis
 * [Experiments & Feature Flags](experiments)
 
 See [Android Endpoints](android-endpoints) for the full list with test status.
+
+##### App OAuth clients (`assets/secrets.properties`)
+The app bundles its OAuth client credentials in clear text in `assets/secrets.properties` (in release builds an obfuscated copy). About two dozen configs, each a triple `{variant}Id` / `{variant}ClientId` (16 chars) / `{variant}ClientSecret` (43 chars):
+
+| Variant group | Examples |
+|---|---|
+| Phone | `Default`, `DefaultHiRes`, `DefaultHiResV2`, `DefaultDolbyAtmos(HiRes/V2)`, `DefaultClear…` (ad-free sign-up) |
+| TV / FireTV | `DefaultTv`, `DefaultTvHiRes`, `DefaultTvDolbyAtmos`, `FireTv`, `FireTvDolbyAtmos` |
+| Car | `DefaultAutomotive`, `DefaultAutomotiveDolbyAtmos` |
+| Other | `Bits`, `FacebookPortalMini`, `DefaultStage` (staging) |
+
+Also in the file: third-party keys (AppsFlyer, Adjust, Braze, Firebase sender id, OneTrust) and the app signing SHA fingerprints.
+
+Verified 2026-11-01 with these clients (values **not** reproduced here, see [API Keys](Copyright)):
+* `client_credentials` works for every variant; the token's `clientName` identifies it (`TIDAL_Android_2.x.x`, `…_2.87.0` = HiRes, `…_TV`). See [Client Credentials](auth-client-credentials).
+* The **device flow** only works for TV/FireTV clients; the phone client answers `Client is not a Limited Input Device client`. See [Device Authorization](auth-device_authorization).
+* A full TV login (device flow, user approved) returned a real user token; `refresh_token`, `update_client` and `logout` all verified. See [auth-token](auth-token#update-2026-11-test-status-verified-with-real-app-clients).
+* The phone clients log in with [Authorization Code + PKCE](auth-pkce) (the HiRes phone client id from `secrets.properties`, redirect `https://tidal.com/android/login/auth`).
+* Even with a genuine TV app token, offline authorization (`POST users/{userId}/clients/offline`) answers `403` — offline downloads are tied to the native app (Play Integrity), see [Offline (Android)](android-offline).

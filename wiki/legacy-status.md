@@ -21,6 +21,6 @@ Status of the private endpoints that were listed in this documentation but never
 * Endpoints that only exist in the mobile, desktop or TV apps cannot be found this way.
 
 ##### Update 2026-11: Android app
-* `GET users/{userId}/handovertoken` is still used by the Android app and answers `200 {"value": "…"}`. It was called once during the Android test run; the token was not printed or stored.
+* `GET users/{userId}/handovertoken` answers `200 {"value": "…"}` both with the web session token and with a real app token (verified 2026-11; the value was never printed or stored).
 * `DELETE users/{userId}/favorites/mixes/{mixId}/remove` and `GET users/{userId}/favorites/mixes` (v1) are still in the app but answer `404`; use [My Collection v2](my-collection-v2) / [Favorite Mixes](user-favorite-mixes).
 * Offline albums/playlists per device are used by the Android app; see [Offline (Android)](android-offline).

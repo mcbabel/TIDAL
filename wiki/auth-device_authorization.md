@@ -25,5 +25,8 @@
 
 `GET` on this endpoint answers `405 Method Not Allowed` (verified 2026-11).
 
-#### Update 2026-11: Test status
-Not executed. Running a login flow needs the `client_id` (and for some flows the `client_secret`) of an app. The client ids of TIDAL's own apps are intentionally not used or published in this documentation ([API Keys](Copyright)), and no own developer app was registered for the test. The endpoint itself was verified to exist (`GET` answers `405 Method Not Allowed`).
+#### Update 2026-11: Test status (verified with real app clients)
+The TIDAL Android app ships its OAuth client credentials in `assets/secrets.properties` (see [Android](Android)). With those, the full flow was run on 2026-11-01:
+* **Device flow needs a limited-input client.** The phone client answers `400 {"error":"invalid_request","error_description":"Client is not a Limited Input Device client"}`. The TV and FireTV clients work and return the response above.
+* The returned `userCode` was approved on `link.tidal.com`, then the [token endpoint](auth-token#get-token-from-devicecode) returned a real `access_token` + `refresh_token` (scope `r_usr w_usr w_sub`). This registers a client/device on the account; it was logged out again afterwards.
+* The actual client ids and secrets are intentionally not reproduced here, see [API Keys](Copyright).

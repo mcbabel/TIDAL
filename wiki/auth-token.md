@@ -216,3 +216,15 @@
 
 #### Update 2026-11: Test status
 Not executed. Running a login flow needs the `client_id` (and for some flows the `client_secret`) of an app. The client ids of TIDAL's own apps are intentionally not used or published in this documentation ([API Keys](Copyright)), and no own developer app was registered for the test. The token responses are taken from the official TIDAL SDK (`tidal-sdk-web`, auth module) and python-tidal.
+
+### Update 2026-11: Test status (verified with real app clients)
+All grant types were run on 2026-11-01 with the OAuth clients shipped in the Android app's `assets/secrets.properties` (see [Android](Android)); the client id/secret values are not reproduced here ([API Keys](Copyright)).
+
+| Grant | Result |
+|---|---|
+| `client_credentials` | `200`, no-user token, `scope: ""`, `expires_in: 14400`. `clientName` identifies the variant, e.g. `TIDAL_Android_2.x.x`, `TIDAL_Android_2.87.0` (HiRes), `TIDAL_Android_2.x.x_TV`. |
+| `urn:ietf:params:oauth:grant-type:device_code` | `200` after the user approved the code (full login, `access_token` + `refresh_token`). |
+| `refresh_token` | `200`, new `access_token`, `expires_in: 14400`; the response may omit a new `refresh_token`. |
+| `update_client` | `200`, returns a **new** `access_token` **and** `refresh_token` (used by the app to move a session to another client). |
+
+After the tests the sessions were logged out ([Log Out](log-out)): `POST /v1/logout` returns `204`, and the token then answers `401`.

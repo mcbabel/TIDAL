@@ -22,6 +22,9 @@ I deeply discourage you from building and distributing copyright-infringing apps
 
 #### Changelog
 
+11-01-2026 (App OAuth clients):
+  - Verified all OAuth login/token flows with the app's own client credentials (from the APK); client ids/secrets are not published (see wiki/Copyright)
+
 11-01-2026 (Android):
   - Complete documentation of the TIDAL Android app API (2.215.0): overview, all 271 private endpoints with live test status, new pages for Android-only features (wiki/Android.md, wiki/android-endpoints.md)
 

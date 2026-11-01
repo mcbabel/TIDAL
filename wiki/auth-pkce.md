@@ -15,7 +15,7 @@
 ```{redirect_uri}?code={code}&state={state}```
 
 #### Update 2026-11: Test status
-Used, not run manually: the account owner logged in to the web player themselves through `login.tidal.com`, which is this flow. Running a login flow needs the `client_id` (and for some flows the `client_secret`) of an app. The client ids of TIDAL's own apps are intentionally not used or published in this documentation ([API Keys](Copyright)), and no own developer app was registered for the test.
+The account owner logged in to the web player through `login.tidal.com`, which is this flow. The browser-based code exchange was not scripted (the login page is bot protected). The non-browser grants (device flow, client credentials, refresh, update_client) were run with the real app clients, see [auth-token](auth-token#update-2026-11-test-status-verified-with-real-app-clients). Client id/secret values are not reproduced here ([API Keys](Copyright)).
 
 #### Update 2026-11: Android app (verified)
 * The Android app uses `redirect_uri=https://tidal.com/android/login/auth`. Android opens the redirect in the app (App Link); in a browser the page shows "page not found". See [Android](Android).

@@ -144,3 +144,20 @@ Not reached (no object of this type in the account), grouped by resource:
 * Track preferences of a generation use optimistic locking: send the current `meta.preferenceVersion` as `meta.expectedPreferenceVersion`, otherwise `409`.
 * Full tracks from the official `trackManifests` are Widevine encrypted for every format (also stereo FLAC). The current web player plays through the official API and therefore needs Widevine (`S6001` in browsers without it). The private `playbackinfo` still returns unencrypted streams. See [DRM](drm).
 * The built-in browser of the test machine had no Widevine CDM; the DRM tests ran in a separate, remote controlled Google Chrome instance with its own profile, which was deleted afterwards.
+
+#### App OAuth clients (2026-11-01)
+To test the login and token flows that the earlier runs could only describe, the OAuth client credentials shipped in the Android app (`assets/secrets.properties`, ~24 client configs) were used. The actual id/secret values are not reproduced in the documentation ([API Keys](Copyright)).
+
+| Flow | Result |
+|---|---|
+| `client_credentials` (all variants) | ✅ `200`, no-user token, `clientName` identifies the variant |
+| Device authorization (TV/FireTV) | ✅ `200`, real `userCode`; phone client rejected (`not a Limited Input Device client`) |
+| Device-code token exchange | ✅ `200` after the account owner approved the code on `link.tidal.com` (full login) |
+| `refresh_token` | ✅ `200` |
+| `update_client` | ✅ `200` (new access + refresh token) |
+| `logout` | ✅ `204`, token then `401` |
+| Offline authorize (`clients/offline`) with the TV token | ⚠️ `403` — gated by the native app / Play Integrity |
+
+Cleanup: the TV login registered a device/client on the account; all three issued sessions were logged out (`204`, then `401`), and the token files were shredded. The device may still appear as a signed-out "TIDAL TV" entry in the account's device list and can be removed there. Account data (favorites, playlists, …) was not changed. No client id, secret or token value was written to the documentation.
+
+The only login step that could not be scripted here is the **browser** code exchange of the phone PKCE flow (the built-in browser is not allowed to drive the credentialed login page); the PKCE token endpoint itself is the same `oauth2/token` that was verified with the other grants.
