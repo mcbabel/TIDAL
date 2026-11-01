@@ -22,6 +22,11 @@ I deeply discourage you from building and distributing copyright-infringing apps
 
 #### Changelog
 
+11-01-2026 (complete coverage):
+  - Every API call of the TIDAL web player is documented (blocks, onboarding, cloud queue, DRM, streaming privileges, marketplace, suggestions, ...)
+  - Full reference of the official API: all 438 operations on 89 resource pages
+  - Status page for the remaining legacy endpoints
+
 11-01-2026:
   - Documentation updated to the current TIDAL API and verified against the live API (see [wiki/Changelog.md](wiki/Changelog.md))
   - Created Entries: Audio Quality (MQA removed, HI_RES_LOSSLESS), Track PlaybackInfo, Authorization Code + PKCE, Client Credentials, Session, v2 Home Feed, v2 Artist Page, v2 Search, My Collection Folders, Playlist Visibility and many more

@@ -51,3 +51,18 @@
 <?xml version='1.0' encoding='UTF-8'?><MPD xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:cenc="urn:mpeg:cenc:2013" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 DASH-MPD.xsd" profiles="urn:mpeg:dash:profile:isoff-main:2011" type="static" minBufferTime="PT3.993S" mediaPresentationDuration="PT2M4.073S"><Period id="0"><AdaptationSet id="0" contentType="audio" mimeType="audio/mp4" lang="und" group="main" segmentAlignment="true"><Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/><Representation id="FLAC_HIRES,44100,24" codecs="flac" bandwidth="1227913" audioSamplingRate="44100"><AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/><SegmentTemplate timescale="44100" initialization="https://sp-ad-fa.audio.tidal.com/…" media="https://sp-ad-fa.audio.tidal.com/…" startNumber="1"><SegmentTimeline><S d="176128" r="30"/><S d="11652"/></SegmentTimeline></SegmentTemplate></Representation></AdaptationSet></Period></MPD>
 ```
 All qualities (LOW to HI_RES_LOSSLESS) were delivered as MPEG DASH with fragmented MP4 segments to the web client. Segment URLs are signed and expire.
+
+#### Update: Headers and errors used by the web player (from web player code 2026-11)
+##### Optional Header
+```x-tidal-streamingsessionid: {uuid}``` (one UUID per playback)\
+```x-tidal-prefetch: true``` (request for the next track in the queue)\
+```x-tidal-token: {client_id}```
+##### Error subStatus
+| subStatus | Meaning |
+|---|---|
+| 4005 | Asset is not ready for playback (client/quality not allowed) |
+| 4010 | Monthly stream quota exceeded |
+| 4032, 4035 | Content not available in your location |
+| 4033 | Content not available for your subscription |
+
+Only one device can stream at the same time, see [Streaming Privileges](streaming-privileges). DRM licenses: see [DRM](drm).

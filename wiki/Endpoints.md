@@ -19,6 +19,14 @@
 [```GET artists/{id}/radio```][+](artist-radio)
 
 [```GET v2/artist/{id}```][+](artist-page-v2)
+
+[```GET v2/artist/@{handle}```][+](artist-page-v2)
+
+[```GET v2/artist/{id}/playable```][+](artist-playable)
+
+[```GET v2/artist/{sourceType}/view-all```][+](artist-view-all)
+
+[```GET pages/contributor```][+](page-contributor)
 ###### Albums
 
 [```GET albums/{id}```][+](album)
@@ -50,7 +58,7 @@
 
 [```POST playlists/{uuid}/items/{indices}```][+](playlist-move-item)
 
-[```POST playlists/{uuid}/items/{index}/replace```][+](404)
+[```POST playlists/{uuid}/items/{index}/replace```][+](playlist-replace-item)
 
 [```POST playlists/{uuid}```][+](playlist-rename)
 
@@ -95,7 +103,7 @@
 
 [```GET mixes/{mixId}/items```][+](mix-items)
 ###### User
-[```POST users/{userId}/facebook```][+](404)
+[```POST users/{userId}/facebook```][+](legacy-status)
 
 [```POST users/{userId}/favorites/albums```][+](user-add-favorite-album)
 
@@ -107,13 +115,13 @@
 
 [```POST users/{userId}/favorites/videos```][+](user-add-favorite-video)
 
-[```POST users/{userId}/clients/{clientId}/offline/albums```][+](404)
+[```POST users/{userId}/clients/{clientId}/offline/albums```][+](legacy-status)
 
-[```POST users/{userId}/clients/{clientId}/offline/playlists```][+](404)
+[```POST users/{userId}/clients/{clientId}/offline/playlists```][+](legacy-status)
 
-[```POST users/{userId}/playlists```][+](404)
+[```POST users/{userId}/playlists```][+](user-create-playlist)
 
-[```GET users/facebook/acceptedEULA```][+](404)
+[```GET users/facebook/acceptedEULA```][+](legacy-status)
 
 [```GET users/{userId}/clients```][+](user-clients)
 
@@ -131,7 +139,7 @@
 
 [```GET users/{userId}/favorites/videos```][+](user-favorite-videos)
 
-[```GET users/{userId}/handovertoken```][+](404)
+[```GET users/{userId}/handovertoken```][+](legacy-status)
 
 [```GET users/{userId}/clients/{clientId}/offline/albums```][+](user-offline-albums)
 
@@ -139,7 +147,7 @@
 
 [```DELETE users/{userId}/clients/{clientId}/offline/all```][+](user-delete-offline-all)
 
-[```DELETE users/{userId}/facebook```][+](404)
+[```DELETE users/{userId}/facebook```][+](legacy-status)
 
 [```DELETE users/{userId}/favorites/albums/{albumId}```][+](user-delete-favorite-album)
 
@@ -155,7 +163,7 @@
 
 [```DELETE users/{userId}/clients/{clientId}/offline/playlists/{playlistUuid}```][+](user-delete-offline-playlist)
 
-[```POST users/{userId}/subscription/updateWithAmazon```][+](404)
+[```POST users/{userId}/subscription/updateWithAmazon```][+](legacy-status)
 
 [```POST users/{userId}/image```][+](user-image-update)
 
@@ -166,6 +174,30 @@
 [```GET v2/user-playlists/{userId}/public```][+](user-playlists-public)
 
 [```GET v2/profiles/{userId}```][+](user-profile)
+
+[```GET users/{userId}/activity```][+](user-activity)
+
+[```GET users/{userId}/blocks/ids```][+](user-blocks)
+
+[```GET users/{userId}/blocks/{type}```][+](user-blocks)
+
+[```POST users/{userId}/blocks/{type}```][+](user-blocks)
+
+[```DELETE users/{userId}/blocks/{type}/{id}```][+](user-blocks)
+
+[```GET users/{userId}/onboarding```][+](user-onboarding)
+
+[```POST users/{userId}/onboarding```][+](user-onboarding)
+
+[```POST users/{userId}/earlyAccessProgram```][+](user-onboarding)
+
+[```GET v2/my-collection/artists```][+](my-collection-artists)
+
+[```GET v2/marketplace/v1/user-purchases```][+](marketplace)
+
+[```GET v2/marketplace/spotlight/v1/user```][+](marketplace)
+
+[```POST v2/marketplace/v3/checkout```][+](marketplace)
 
 [```GET v2/favorites/mixes```][+](user-favorite-mixes)
 
@@ -210,6 +242,10 @@
 [```GET pages/moods```][+](page-moods)
 
 [```GET v2/home/feed/static```][+](home-feed-static)
+
+[```GET v2/home/feed/{vibe}```][+](home-feed-vibe)
+
+[```GET v2/home/pages/{moduleId}/view-all```][+](home-feed-vibe)
 ###### Search
 [```GET search/albums```][+](search-albums)
 
@@ -224,16 +260,30 @@
 [```GET search/videos```][+](search-videos)
 
 [```GET v2/search```][+](search-v2)
+
+[```GET v2/client-search```][+](search-v2)
+
+[```GET v2/suggestions```][+](search-suggestions)
+
+[```DELETE v2/suggestions```][+](search-suggestions)
 ###### Widevine
 
-[```POST drm/licenses/widevine```][+](404)
+[```POST drm/licenses/widevine```][+](legacy-status)
 
-[```POST streamingprivileges/tokens```][+](404)
+[```POST v2/widevine```][+](drm)
+
+[```POST streamingprivileges/tokens```][+](legacy-status)
+
+[```POST rt/connect```][+](streaming-privileges)
 
 ###### Authentication
 [```POST oauth2/token```][+](auth-token)
 
-[```GET authorize```][+](404)
+[```GET authorize```][+](auth-pkce)
+
+[```POST web-session/credentials```][+](web-session)
+
+[```POST web-session/logout```][+](web-session)
 
 [```POST oauth2/device_authorization```][+](auth-device_authorization)
 
@@ -251,6 +301,34 @@
 [```GET genres```][+](genres)
 
 [```GET ping```][+](country)
+
+[```GET v2/images/metadata-and-process```][+](images-metadata)
+
+[```GET welcome/categories/artists```][+](welcome-artists)
+
+[```POST welcome/users/artists```][+](welcome-artists)
+
+[```GET v2/onboarding/tmm/migration```][+](onboarding-v2)
+
+[```POST v2/chat/init```][+](music-assistant)
+
+[```POST tidal.com/api/event-batch```][+](event-batch)
+###### Cloud Queue (connectqueue.tidal.com/v1)
+[```POST queues```][+](cloud-queue)
+
+[```GET queues/{queueId}```][+](cloud-queue)
+
+[```GET queues/{queueId}/items```][+](cloud-queue)
+
+[```PUT queues/{queueId}/items```][+](cloud-queue)
+
+[```PATCH queues/{queueId}/items```][+](cloud-queue)
+
+[```DELETE queues/{queueId}/items/{itemId}```][+](cloud-queue)
+
+[```PUT queues/{queueId}/shuffle```][+](cloud-queue)
+
+[```GET content/{queueId}```][+](cloud-queue)
 
 ###### Official TIDAL API
 [List of all Official API Endpoints](official-endpoints)

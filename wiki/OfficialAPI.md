@@ -4,7 +4,7 @@ Since 2024 TIDAL offers an official, public API. It is documented by TIDAL itsel
 * Reference: https://tidal-music.github.io/tidal-api-reference/ (OpenAPI spec: `tidal-api-oas.json`, version `1.10.218` on 2026-11-01)
 * Developer portal (register your app, get client_id / client_secret): https://developer.tidal.com
 * Official SDKs: https://github.com/tidal-music (`tidal-sdk-web`, `tidal-sdk-android`, `tidal-sdk-ios`)
-* [List of all Official API Endpoints](official-endpoints) (third-party accessible)
+* [List of all Official API Endpoints](official-endpoints) (all 438 operations, each resource with a full reference page)
 * [Migration Guide](Migration) (private API → official API)
 
 ##### Authentication

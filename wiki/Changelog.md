@@ -1,3 +1,15 @@
+#### 11-01-2026 (complete coverage)
+Coverage check against the JavaScript of the web player (all API calls extracted) and the full official OpenAPI spec. See [Status of legacy endpoints](legacy-status) for the method and the remaining limits.
+
+Private API:
+  - Created Entries: User Blocks, User Activity, User Onboarding & Early Access, Welcome / Artist Picker, Contributor Page, Artist Playable, Artist View All (v2), Home Feed By Vibe / View All, Search Suggestions, Image Metadata, My Collection Artists (v2), Purchases & Marketplace, Onboarding (v2), Music Assistant (AI Chat), DRM (Widevine / FairPlay), Streaming Privileges (rt/connect + WebSocket), Cloud Queue (TIDAL Connect), Web Session, Event Batch, Replace Playlist Item, Create Playlist (v1)
+  - Updated: Track PlaybackInfo (headers `x-tidal-streamingsessionid`, `x-tidal-prefetch`, error subStatus codes)
+  - Created Page: [Status of legacy endpoints](legacy-status). All former "not yet documented" entries are resolved or explained.
+
+Official API:
+  - Created Entries: reference pages for all 89 resources with all 438 operations (parameters, request bodies, attributes, relationships, access tier, scopes), generated from the spec
+  - Updated: [List of all Endpoints](official-endpoints) now lists all 438 operations
+
 #### 11-01-2026
 Documentation updated to the current state of the TIDAL API. All endpoints marked **(verified 2026-11)** were called against the live API (web player version 2026.10.31, official API spec 1.10.218). Write endpoints were tested with temporary test objects that were deleted afterwards.
 
