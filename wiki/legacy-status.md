@@ -15,6 +15,7 @@ Status of the private endpoints that were listed in this documentation but never
 | ```POST users/{userId}/clients/{clientId}/offline/albums```, ```.../offline/playlists``` | Offline downloads of the mobile/desktop apps. Need a client that is `authorizedForOffline` ([Get User Clients](user-clients)). The web player has no offline mode, so these could not be verified. The official API has internal equivalents: `installations/{id}/relationships/offlineInventory` and `offlineTasks`, see [Official API Endpoints](official-endpoints). |
 
 ##### Coverage method
+* Test status of every endpoint: [Test Report](TestReport).
 * All API calls in the JavaScript of the web player (version 2026.10.31, 128 files) were extracted and compared with this documentation. Every private endpoint found there is documented.
 * All 438 operations of the official OpenAPI spec 1.10.218 are documented (generated reference pages). All 309 official API paths used by the web player are part of the spec.
 * Endpoints that only exist in the mobile, desktop or TV apps cannot be found this way.

@@ -13,3 +13,6 @@
 ```state={state}```
 #### Example Redirect
 ```{redirect_uri}?code={code}&state={state}```
+
+#### Update 2026-11: Test status
+Used, not run manually: the account owner logged in to the web player themselves through `login.tidal.com`, which is this flow. Running a login flow needs the `client_id` (and for some flows the `client_secret`) of an app. The client ids of TIDAL's own apps are intentionally not used or published in this documentation ([API Keys](Copyright)), and no own developer app was registered for the test.

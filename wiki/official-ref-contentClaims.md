@@ -20,6 +20,8 @@ Relationships (`include=`): `claimedResource`, `claimingArtist`, `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple contentClaims by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -38,6 +40,8 @@ Retrieves multiple contentClaims by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/contentClaims```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Legal ownership claim for an artist profile or content. Claims are reviewed by TIDAL staff; a test claim would be a false claim.
 
 Creates a new contentClaim.
 ##### Parameters
@@ -81,6 +85,8 @@ Creates a new contentClaim.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The account has no content claims (creating one is not done, see `POST /contentClaims`).
+
 Retrieves single contentClaim by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -100,6 +106,8 @@ Retrieves single contentClaim by id.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The account has no content claims (creating one is not done, see `POST /contentClaims`).
+
 Retrieves claimedResource relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -118,6 +126,8 @@ Retrieves claimedResource relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The account has no content claims (creating one is not done, see `POST /contentClaims`).
+
 Retrieves claimingArtist relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -135,6 +145,8 @@ Retrieves claimingArtist relationship.
 ```https://openapi.tidal.com/v2/contentClaims/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. The account has no content claims (creating one is not done, see `POST /contentClaims`).
 
 Retrieves owners relationship.
 ##### Parameters

@@ -19,6 +19,8 @@ An individual audio file for a track in a specific format and quality.
 ##### Access
 Tier: `PARTNER` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `playback`, `r_usr`
 
+**Live test 2026-11-01:** answered `403` `CLIENT_NOT_ENTITLED: Client cannot access this content`.
+
 Retrieves single trackFile by id.
 ##### Parameters
 | Name | In | Required | Type | Description |

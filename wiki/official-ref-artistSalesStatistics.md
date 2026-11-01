@@ -30,6 +30,8 @@ Relationships (`include=`): `artist`, `topSellers`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple artistSalesStatistics by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -49,6 +51,8 @@ Retrieves multiple artistSalesStatistics by available filters, or without if app
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The list answered `200` without data: statistics only exist for artist accounts with sales.
+
 Retrieves artist relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -66,6 +70,8 @@ Retrieves artist relationship.
 ```https://openapi.tidal.com/v2/artistSalesStatistics/{id}/relationships/topSellers```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. The list answered `200` without data: statistics only exist for artist accounts with sales.
 
 Retrieves topSellers relationship.
 ##### Parameters

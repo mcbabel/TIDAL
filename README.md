@@ -22,6 +22,9 @@ I deeply discourage you from building and distributing copyright-infringing apps
 
 #### Changelog
 
+11-01-2026 (live tested):
+  - Every endpoint was tested live with a real account (write tests with cleanup); results and reasons for the few untested ones in the Test Report (wiki/TestReport.md)
+
 11-01-2026 (complete coverage):
   - Every API call of the TIDAL web player is documented (blocks, onboarding, cloud queue, DRM, streaming privileges, marketplace, suggestions, ...)
   - Full reference of the official API: all 438 operations on 89 resource pages

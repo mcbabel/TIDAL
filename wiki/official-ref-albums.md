@@ -35,6 +35,8 @@ Relationships (`include=`): `albumStatistics`, `artists`, `coverArt`, `genres`, 
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple albums by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -59,6 +61,8 @@ Retrieves multiple albums by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/albums```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Creates uploads (albums, tracks, audio source files, artwork) on TIDAL. Needs real media files and the rights to publish them; uploads can become visible to other users.
 
 Creates an uploaded album. Album creation is not atomic with its artist assignment, so every listed artist must be owned by the caller; a collaborator or album-level grant is not enough until the album exists.
 ##### Parameters
@@ -114,6 +118,8 @@ Creates an uploaded album. Album creation is not atomic with its artist assignme
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Deletes existing album.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -131,6 +137,8 @@ Deletes existing album.
 ```https://openapi.tidal.com/v2/albums/{id}```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single album by id.
 ##### Parameters
@@ -152,6 +160,8 @@ Retrieves single album by id.
 ```https://openapi.tidal.com/v2/albums/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Updates existing album.
 ##### Parameters
@@ -204,6 +214,8 @@ Updates existing album.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
+
 Retrieves albumStatistics relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -221,6 +233,8 @@ Retrieves albumStatistics relationship.
 ```https://openapi.tidal.com/v2/albums/{id}/relationships/artists```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves artists relationship.
 ##### Parameters
@@ -242,6 +256,8 @@ Retrieves artists relationship.
 ```https://openapi.tidal.com/v2/albums/{id}/relationships/artists```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Sets the album's artists, replacing the current list. Artists are listed in the order given. Provide 1 to 10 distinct artists. You can add your own artist profile and the profiles of users who have owner or collaborator access to the album. Only the album's owner can change its artists. Returns an acknowledgement.
 ##### Parameters
@@ -276,6 +292,8 @@ Sets the album's artists, replacing the current list. Artists are listed in the 
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves coverArt relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -295,6 +313,8 @@ Retrieves coverArt relationship.
 ```https://openapi.tidal.com/v2/albums/{id}/relationships/coverArt```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Replaces the uploaded cover artwork selection with one attachable artwork. Empty data clears the selection. Previously attached uploaded artwork is soft-deleted unless system-managed. Returns an acknowledgement.
 ##### Parameters
@@ -329,6 +349,8 @@ Replaces the uploaded cover artwork selection with one attachable artwork. Empty
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves genres relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -348,6 +370,8 @@ Retrieves genres relationship.
 ```https://openapi.tidal.com/v2/albums/{id}/relationships/items```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves items relationship.
 ##### Parameters
@@ -369,6 +393,8 @@ Retrieves items relationship.
 ```https://openapi.tidal.com/v2/albums/{id}/relationships/items```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Incrementally updates one existing track's 1-based track number to meta.positionIndex. Does not replace the album's items or add or remove tracks. Empty data is rejected. Returns an acknowledgement.
 ##### Parameters
@@ -404,6 +430,8 @@ Incrementally updates one existing track's 1-based track number to meta.position
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -423,6 +451,8 @@ Retrieves owners relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves priceConfig relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -441,6 +471,8 @@ Retrieves priceConfig relationship.
 ```https://openapi.tidal.com/v2/albums/{id}/relationships/providers```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves providers relationship.
 ##### Parameters
@@ -462,6 +494,8 @@ Retrieves providers relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves replacement relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -482,6 +516,8 @@ Retrieves replacement relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
+
 The album's share links, active and expired, newest first.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -501,6 +537,8 @@ The album's share links, active and expired, newest first.
 ```https://openapi.tidal.com/v2/albums/{id}/relationships/similarAlbums```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves similarAlbums relationship.
 ##### Parameters
@@ -523,6 +561,8 @@ Retrieves similarAlbums relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
+
 Retrieves suggestedCoverArts relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -541,6 +581,8 @@ Retrieves suggestedCoverArts relationship.
 ```https://openapi.tidal.com/v2/albums/{id}/relationships/usageRules```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves usageRules relationship.
 ##### Parameters

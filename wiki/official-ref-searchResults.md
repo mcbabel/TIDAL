@@ -19,6 +19,8 @@ Relationships (`include=`): `albums`, `artists`, `playlists`, `topHits`, `tracks
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`, `search.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Searches for a query and returns a collection containing exactly one search results resource.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -42,6 +44,8 @@ Searches for a query and returns a collection containing exactly one search resu
 ```https://openapi.tidal.com/v2/searchResults/{id}/relationships/albums```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`, `search.read`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves albums relationship.
 ##### Parameters
@@ -67,6 +71,8 @@ Retrieves albums relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`, `search.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves artists relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -90,6 +96,8 @@ Retrieves artists relationship.
 ```https://openapi.tidal.com/v2/searchResults/{id}/relationships/playlists```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`, `search.read`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves playlists relationship.
 ##### Parameters
@@ -115,6 +123,8 @@ Retrieves playlists relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`, `search.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves topHits relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -139,6 +149,8 @@ Retrieves topHits relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`, `search.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves tracks relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -162,6 +174,8 @@ Retrieves tracks relationship.
 ```https://openapi.tidal.com/v2/searchResults/{id}/relationships/videos```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`, `search.read`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves videos relationship.
 ##### Parameters

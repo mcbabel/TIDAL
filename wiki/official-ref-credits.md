@@ -18,6 +18,8 @@ Relationships (`include=`): `artist`, `category`
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `404`.
+
 Retrieves single credit by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -37,6 +39,8 @@ Retrieves single credit by id.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `404`.
+
 Retrieves artist relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -54,6 +58,8 @@ Retrieves artist relationship.
 ```https://openapi.tidal.com/v2/credits/{id}/relationships/category```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** answered `404`.
 
 Retrieves category relationship.
 ##### Parameters

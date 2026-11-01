@@ -17,6 +17,8 @@ Relationships (`include=`): `activePlayer`, `availablePlayers`, `changeEventStre
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single userPlaybackState by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -35,6 +37,8 @@ Retrieves single userPlaybackState by id.
 ```https://openapi.tidal.com/v2/userPlaybackStates/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a Base62-encoded user ID`. Not executed for real: it changes the playback state of the account (would take over or interrupt playback on the user’s devices).
 
 Updates existing userPlaybackState.
 ##### Parameters
@@ -66,6 +70,8 @@ Updates existing userPlaybackState.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves activePlayer relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -83,6 +89,8 @@ Retrieves activePlayer relationship.
 ```https://openapi.tidal.com/v2/userPlaybackStates/{id}/relationships/activePlayer```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a Base62-encoded user ID`. Not executed for real: it changes the playback state of the account (would take over or interrupt playback on the user’s devices).
 
 Replaces the active-player selection with the supplied owned installation. Explicit null data releases the player without deleting the installation. Returns null linkage when released or when the selected installation has no live attachment. An unavailable selection is retained and becomes visible again when its attachment is refreshed.
 ##### Parameters
@@ -110,6 +118,8 @@ Replaces the active-player selection with the supplied owned installation. Expli
 ```https://openapi.tidal.com/v2/userPlaybackStates/{id}/relationships/availablePlayers```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a Base62-encoded user ID`. Not executed for real: it changes the playback state of the account (would take over or interrupt playback on the user’s devices).
 
 Detaches one installation without deleting it. Also releases the active player when it is that installation. Returns an acknowledgement.
 ##### Parameters
@@ -140,6 +150,8 @@ Detaches one installation without deleting it. Also releases the active player w
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves availablePlayers relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -158,6 +170,8 @@ Retrieves availablePlayers relationship.
 ```https://openapi.tidal.com/v2/userPlaybackStates/{id}/relationships/availablePlayers```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a Base62-encoded user ID`. Not executed for real: it changes the playback state of the account (would take over or interrupt playback on the user’s devices).
 
 Attaches or refreshes one owned installation as an available player, preserving other attachments. Returns all currently available player linkage.
 ##### Parameters
@@ -188,6 +202,8 @@ Attaches or refreshes one owned installation as an available player, preserving 
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves changeEventStream relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -204,6 +220,8 @@ Retrieves changeEventStream relationship.
 ```https://openapi.tidal.com/v2/userPlaybackStates/{id}/relationships/playQueue```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves playQueue relationship.
 ##### Parameters
@@ -222,6 +240,8 @@ Retrieves playQueue relationship.
 ```https://openapi.tidal.com/v2/userPlaybackStates/{id}/relationships/playQueue```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a Base62-encoded user ID`. Not executed for real: it changes the playback state of the account (would take over or interrupt playback on the user’s devices).
 
 Replaces the selected play queue. Explicit null data clears the selection without deleting the queue. Returns the selected queue linkage, or null data when cleared.
 ##### Parameters

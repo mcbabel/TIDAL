@@ -15,6 +15,8 @@ A user's recent search history entry.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `search.write`, `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Deletes existing searchHistoryEntrie.
 ##### Parameters
 | Name | In | Required | Type | Description |

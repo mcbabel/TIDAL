@@ -17,6 +17,8 @@ Relationships (`include=`): `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple downloads by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -35,6 +37,8 @@ Retrieves multiple downloads by available filters, or without if applicable.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`.
+
 Retrieves single download by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -52,6 +56,8 @@ Retrieves single download by id.
 ```https://openapi.tidal.com/v2/downloads/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
 
 Retrieves owners relationship.
 ##### Parameters

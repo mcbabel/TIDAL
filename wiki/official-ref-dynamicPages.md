@@ -18,6 +18,8 @@ Relationships (`include=`): `modules`, `subject`
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple dynamicPages by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -44,6 +46,8 @@ Retrieves multiple dynamicPages by available filters, or without if applicable.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 The page's modules, in display order.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -68,6 +72,8 @@ The page's modules, in display order.
 ```https://openapi.tidal.com/v2/dynamicPages/{id}/relationships/subject```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves subject relationship.
 ##### Parameters

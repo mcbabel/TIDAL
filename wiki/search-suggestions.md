@@ -41,7 +41,7 @@
 }
 ```
 
-### Delete Search History Entry (from web player code 2026-11, not live-tested)
+### Delete Search History Entry (verified 2026-11)
 ##### Method
 ```DELETE```
 ##### Url
@@ -49,3 +49,4 @@
 ##### Header
 ```authorization: Bearer {access_token}```\
 ```x-tidal-client-version: {version}```
+* Searches with [Search v2](search-v2) are added to `history`. Tested: search for a test term, entry appears in `history` (`{"query": "...", "highlights": []}`), `DELETE` answers `204 No Content`, entry is gone.

@@ -22,6 +22,8 @@ Relationships (`include=`): `author`, `owners`, `parentComment`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `404`.
+
 Retrieves multiple comments by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -45,6 +47,8 @@ Retrieves multiple comments by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/comments```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Comments can only be posted on albums, tracks and uploads of other people. They are public and the artist is notified.
 
 Creates a new comment.
 ##### Parameters
@@ -90,6 +94,8 @@ Creates a new comment.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `404`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Deletes existing comment.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -106,6 +112,8 @@ Deletes existing comment.
 ```https://openapi.tidal.com/v2/comments/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
+
+**Live test 2026-11-01:** not reached. The account has no comments (creating one is not done, see `POST /comments`).
 
 Retrieves single comment by id.
 ##### Parameters
@@ -125,6 +133,8 @@ Retrieves single comment by id.
 ```https://openapi.tidal.com/v2/comments/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `404`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Updates existing comment.
 ##### Parameters
@@ -158,6 +168,8 @@ Updates existing comment.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** not reached. The account has no comments (creating one is not done, see `POST /comments`).
+
 The artist who wrote the comment.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -176,6 +188,8 @@ The artist who wrote the comment.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** not reached. The account has no comments (creating one is not done, see `POST /comments`).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -193,6 +207,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/comments/{id}/relationships/parentComment```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
+
+**Live test 2026-11-01:** not reached. The account has no comments (creating one is not done, see `POST /comments`).
 
 Retrieves parentComment relationship.
 ##### Parameters

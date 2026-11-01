@@ -21,6 +21,8 @@ Relationships (`include=`): `items`, `seedItem`
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple dynamicModules by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -45,6 +47,8 @@ Retrieves multiple dynamicModules by available filters, or without if applicable
 ```https://openapi.tidal.com/v2/dynamicModules/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single dynamicModule by id.
 ##### Parameters
@@ -71,6 +75,8 @@ Retrieves single dynamicModule by id.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 The module's items, in order — one stable collection per module, consistent for a given refreshSeed. Reads without a cursor return the first page (the slice a page shelf renders, sized for the module's previewLayout and device) with a continuation cursor; passing the cursor returns subsequent pages.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -95,6 +101,8 @@ The module's items, in order — one stable collection per module, consistent fo
 ```https://openapi.tidal.com/v2/dynamicModules/{id}/relationships/seedItem```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 The item whose listen or add event seeded this module's collection (e.g. the album a BECAUSE_YOU_* module is based on); null for modules that are not seeded by an item.
 ##### Parameters

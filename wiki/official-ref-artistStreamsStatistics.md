@@ -29,6 +29,8 @@ Relationships (`include=`): `artist`, `topTracks`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple artistStreamsStatistics by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -48,6 +50,8 @@ Retrieves multiple artistStreamsStatistics by available filters, or without if a
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The list answered `200` without data: statistics only exist for artist accounts.
+
 Retrieves artist relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -65,6 +69,8 @@ Retrieves artist relationship.
 ```https://openapi.tidal.com/v2/artistStreamsStatistics/{id}/relationships/topTracks```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. The list answered `200` without data: statistics only exist for artist accounts.
 
 Retrieves topTracks relationship.
 ##### Parameters

@@ -60,3 +60,6 @@
   ]
 }
 ```
+
+#### Update 2026-11 (verified)
+Still exists. With a `clientId` that is not authorized for offline it answers `400 {"subStatus":1002,"userMessage":"Bad request"}`. Offline-authorized clients are only the mobile/desktop apps (see [Get User Clients](user-clients), `authorizedForOffline`).

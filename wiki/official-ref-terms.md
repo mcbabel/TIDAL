@@ -18,6 +18,8 @@ A terms and conditions document.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple terms by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -35,6 +37,8 @@ Retrieves multiple terms by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/terms/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single term by id.
 ##### Parameters

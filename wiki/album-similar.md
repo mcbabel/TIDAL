@@ -1,5 +1,5 @@
 #### Example Request (verified 2026-11)
-* Similar albums. Answers `404 "Similar albums for or album with id [{id}] not found"` if there are none (verified 2026-11).
+* Similar albums. Answers `404 "Similar albums for or album with id [{id}] not found"` if there are none (verified 2026-11). Verified with `200` for an album that has similar albums.
 ##### Method
 ```GET```
 ##### Url

@@ -23,6 +23,8 @@ Relationships (`include=`): `artworks`, `owners`, `variations`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** answered `403` `REQUIRED_TERMS_NOT_ACCEPTED: Latest terms and conditions must be accepted`.
+
 Retrieves multiple squareItems by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -44,6 +46,8 @@ Retrieves multiple squareItems by available filters, or without if applicable.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Deletes existing squareItem.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -60,6 +64,8 @@ Deletes existing squareItem.
 ```https://openapi.tidal.com/v2/squareItems/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. Commerce (Square shop); terms not accepted (`403 REQUIRED_TERMS_NOT_ACCEPTED`).
 
 Retrieves single squareItem by id.
 ##### Parameters
@@ -78,6 +84,8 @@ Retrieves single squareItem by id.
 ```https://openapi.tidal.com/v2/squareItems/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Updates existing squareItem.
 ##### Parameters
@@ -113,6 +121,8 @@ Updates existing squareItem.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. Commerce (Square shop); terms not accepted (`403 REQUIRED_TERMS_NOT_ACCEPTED`).
+
 A photo Square has no URL for stays in the list and its artwork has no files.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -130,6 +140,8 @@ A photo Square has no URL for stays in the list and its artwork has no files.
 ```https://openapi.tidal.com/v2/squareItems/{id}/relationships/artworks```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Replaces the item's photos with the complete ordered list. Omitted photos are detached and stay in the seller's Square catalog; an empty list clears them. The first artwork is the primary photo. Duplicate artwork IDs are rejected. Uploaded TIDAL JPEG artworks, at most 15,000,000 bytes, are copied to Square and attached under new artwork IDs; their originals stay unchanged. Existing Square artworks must belong to this seller and are attached directly. Returns the complete resulting linkage in display order and the committed item revision. Copies may remain in Square if the replacement fails. Retry unchanged with the original Idempotency-Key after a timeout or 5xx. Recovery is bounded by Marketplace receipts and Square's idempotency retention, and can be blocked if the item is deleted or a source becomes unavailable or ineligible. Read the item again to reconcile its current state.
 ##### Parameters
@@ -164,6 +176,8 @@ Replaces the item's photos with the complete ordered list. Omitted photos are de
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. Commerce (Square shop); terms not accepted (`403 REQUIRED_TERMS_NOT_ACCEPTED`).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -182,6 +196,8 @@ Retrieves owners relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. Commerce (Square shop); terms not accepted (`403 REQUIRED_TERMS_NOT_ACCEPTED`).
+
 Variations in Square's display order.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -199,6 +215,8 @@ Variations in Square's display order.
 ```https://openapi.tidal.com/v2/squareItems/{id}/relationships/variations```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Incrementally moves the selected variations as an ordered block before positionBefore, or to the end when omitted. Memberships are preserved; unselected variations retain their metadata and relative order. Empty data is rejected. Returns the affected linkage only and the updated item revision. After a timeout or `5xx`, retry unchanged with the original Idempotency-Key. Replay protection is bounded by receipt availability and Square's idempotency retention.
 ##### Parameters

@@ -17,6 +17,8 @@ Relationships (`include=`): `owners`, `terms`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple acceptedTerms by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -36,6 +38,8 @@ Retrieves multiple acceptedTerms by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/acceptedTerms```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Accepts TIDAL terms and conditions in the name of the account. That is a legally binding decision of the account owner and cannot be undone.
 
 Creates a new acceptedTerm.
 ##### Parameters
@@ -70,6 +74,8 @@ Creates a new acceptedTerm.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -87,6 +93,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/acceptedTerms/{id}/relationships/terms```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves terms relationship.
 ##### Parameters

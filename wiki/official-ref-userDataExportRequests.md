@@ -15,6 +15,8 @@ A request to export a user's personal data collected by Tidal.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Starts a GDPR export of all account data (sends emails and builds a data package).
+
 Creates a new userDataExportRequest.
 ##### Parameters
 | Name | In | Required | Type | Description |

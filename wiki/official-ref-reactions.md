@@ -18,6 +18,8 @@ Relationships (`include=`): `author`, `ownerProfiles`, `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple reactions by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -43,6 +45,8 @@ Retrieves multiple reactions by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/reactions```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Reactions are only possible on public content (albums, tracks, artists, videos, comments), not on private test playlists (verified: `400 Reactions are not supported for subject type: playlists`). On public content they are visible to others.
 
 Creates a new reaction.
 ##### Parameters
@@ -80,6 +84,8 @@ Creates a new reaction.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Deletes existing reaction.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -96,6 +102,8 @@ Deletes existing reaction.
 ```https://openapi.tidal.com/v2/reactions/{id}/relationships/author```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
+
+**Live test 2026-11-01:** not reached. No reaction could be created for testing (see `POST /reactions`).
 
 The artist who left the reaction.
 ##### Parameters
@@ -115,6 +123,8 @@ The artist who left the reaction.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** not reached. No reaction could be created for testing (see `POST /reactions`).
+
 Deprecated. Use author for attribution.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -132,6 +142,8 @@ Deprecated. Use author for attribution.
 ```https://openapi.tidal.com/v2/reactions/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
+
+**Live test 2026-11-01:** not reached. No reaction could be created for testing (see `POST /reactions`).
 
 Retrieves owners relationship.
 ##### Parameters

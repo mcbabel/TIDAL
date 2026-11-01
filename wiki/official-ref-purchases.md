@@ -18,6 +18,8 @@ Relationships (`include=`): `owners`, `subject`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple purchases by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -39,6 +41,8 @@ Retrieves multiple purchases by available filters, or without if applicable.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The account has no purchases (the list answered `200` without data).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -56,6 +60,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/purchases/{id}/relationships/subject```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. The account has no purchases (the list answered `200` without data).
 
 Retrieves subject relationship.
 ##### Parameters

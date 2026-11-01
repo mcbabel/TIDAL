@@ -16,6 +16,8 @@ A user-submitted report flagging inappropriate or harmful content.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Reports content or users to TIDAL moderation. A test report would be a false report.
+
 Creates a new userReport.
 ##### Parameters
 | Name | In | Required | Type | Description |

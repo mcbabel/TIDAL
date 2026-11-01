@@ -23,6 +23,8 @@ Relationships (`include=`): `actors`, `subject`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 The authenticated user's activity on the selected feed surface.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -44,6 +46,8 @@ The authenticated user's activity on the selected feed surface.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Artists attributed to the activity. Always empty for `ALBUM_FAVOURITED`, `TRACK_FAVOURITED` and `TRACK_PLAYLISTED`, which are counts only, and for `HISTORY_MIX_READY` and `TRACK_PLAY_MILESTONE`, which nobody else acted on.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -62,6 +66,8 @@ Artists attributed to the activity. Always empty for `ALBUM_FAVOURITED`, `TRACK_
 ```https://openapi.tidal.com/v2/userFeedItems/{id}/relationships/subject```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 The resource the activity concerns. For `HISTORY_MIX_READY`, the viewer's history mix as a playlist.
 ##### Parameters

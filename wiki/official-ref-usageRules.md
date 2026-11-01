@@ -20,6 +20,8 @@ Usage rules defining how content may be consumed in a given country.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Sets usage rules (stream, DJ, download) for own uploads. Only for content owners; the test account owns no content.
+
 Creates a new usageRule.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -66,6 +68,8 @@ Creates a new usageRule.
 ```https://openapi.tidal.com/v2/usageRules/{id}```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single usageRule by id.
 ##### Parameters

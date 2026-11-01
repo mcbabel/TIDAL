@@ -27,6 +27,8 @@ Relationships (`include=`): `albums`, `bannerArt`, `biography`, `claimStatus`, `
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple artists by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -48,6 +50,8 @@ Retrieves multiple artists by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/artists```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Creates a public artist profile for the account.
 
 Creates a new artist.
 ##### Parameters
@@ -81,6 +85,8 @@ Creates a new artist.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single artist by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -100,6 +106,8 @@ Retrieves single artist by id.
 ```https://openapi.tidal.com/v2/artists/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 When both profile colours are available, they must have at least 3:1 contrast.
 ##### Parameters
@@ -147,6 +155,8 @@ When both profile colours are available, they must have at least 3:1 contrast.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves albums relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -167,6 +177,8 @@ Retrieves albums relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Reads the selected header banner artwork.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -185,6 +197,8 @@ Reads the selected header banner artwork.
 ```https://openapi.tidal.com/v2/artists/{id}/relationships/bannerArt```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Selects one owned, attachable IMAGE artwork by ID, replacing the selection. Empty data clears the selection; null data and more than one entry are rejected. Previous artwork no longer selected by profileArt, bannerArt or logoArt is soft-deleted unless system-managed. Returns an acknowledgement.
 ##### Parameters
@@ -218,6 +232,8 @@ Selects one owned, attachable IMAGE artwork by ID, replacing the selection. Empt
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves biography relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -236,6 +252,8 @@ Retrieves biography relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves claimStatus relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -252,6 +270,8 @@ Retrieves claimStatus relationship.
 ```https://openapi.tidal.com/v2/artists/{id}/relationships/followers```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves followers relationship.
 ##### Parameters
@@ -272,6 +292,8 @@ Retrieves followers relationship.
 ```https://openapi.tidal.com/v2/artists/{id}/relationships/following```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** `400` `INVALID_REQUEST_BODY: Invalid request body`. See `POST /artists/{id}/relationships/following`.
 
 Deletes item(s) from following relationship.
 ##### Parameters
@@ -302,6 +324,8 @@ Deletes item(s) from following relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves following relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -321,6 +345,8 @@ Retrieves following relationship.
 ```https://openapi.tidal.com/v2/artists/{id}/relationships/following```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** `400` `INVALID_REQUEST_BODY: Invalid request body`. Following is done from an artist profile (path id = own artist id). The test account has no artist profile (`/users/me/relationships/artist` answers `404`). Verified only that the endpoint validates the request.
 
 Adds item(s) to following relationship.
 ##### Parameters
@@ -351,6 +377,8 @@ Adds item(s) to following relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Reads the selected logo artwork.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -369,6 +397,8 @@ Reads the selected logo artwork.
 ```https://openapi.tidal.com/v2/artists/{id}/relationships/logoArt```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Selects one owned, attachable IMAGE artwork by ID, replacing the selection. Empty data clears the selection; null data and more than one entry are rejected. Previous artwork no longer selected by profileArt, bannerArt or logoArt is soft-deleted unless system-managed. Returns an acknowledgement.
 ##### Parameters
@@ -402,6 +432,8 @@ Selects one owned, attachable IMAGE artwork by ID, replacing the selection. Empt
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -419,6 +451,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/artists/{id}/relationships/profileArt```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Reads the artist's avatar artwork.
 ##### Parameters
@@ -438,6 +472,8 @@ Reads the artist's avatar artwork.
 ```https://openapi.tidal.com/v2/artists/{id}/relationships/profileArt```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Replaces the artist's uploaded avatar selection with one owned, attachable artwork. Empty data clears the uploaded selection; legacy pictures or album fallback artwork may still appear in profileArt. Previous artwork no longer selected by profileArt, bannerArt or logoArt is soft-deleted unless system-managed. Returns an acknowledgement.
 ##### Parameters
@@ -471,6 +507,8 @@ Replaces the artist's uploaded avatar selection with one owned, attachable artwo
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves radio relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -491,6 +529,8 @@ Retrieves radio relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves roles relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -508,6 +548,8 @@ Retrieves roles relationship.
 ```https://openapi.tidal.com/v2/artists/{id}/relationships/similarArtists```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves similarArtists relationship.
 ##### Parameters
@@ -529,6 +571,8 @@ Retrieves similarArtists relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves trackProviders relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -546,6 +590,8 @@ Retrieves trackProviders relationship.
 ```https://openapi.tidal.com/v2/artists/{id}/relationships/tracks```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves tracks relationship.
 ##### Parameters
@@ -567,6 +613,8 @@ Retrieves tracks relationship.
 ```https://openapi.tidal.com/v2/artists/{id}/relationships/videos```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves videos relationship.
 ##### Parameters

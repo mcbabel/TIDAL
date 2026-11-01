@@ -20,6 +20,8 @@ Relationships (`include=`): `decision`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple userSubscriptionPriceChanges by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -37,6 +39,8 @@ Retrieves multiple userSubscriptionPriceChanges by available filters, or without
 ```https://openapi.tidal.com/v2/userSubscriptionPriceChanges/{id}/relationships/decision```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. Only exists when TIDAL announced a price change for the subscription; none for the account.
 
 Retrieves decision relationship.
 ##### Parameters

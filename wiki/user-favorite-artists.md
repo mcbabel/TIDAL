@@ -113,3 +113,6 @@
   ]
 }
 ```
+
+#### Update 2026-11 (verified)
+Still works (`200`), response format as above.

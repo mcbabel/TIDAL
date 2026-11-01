@@ -16,6 +16,8 @@ Relationships (`include=`): `items`
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `r_usr`, `recommendations.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single userNewReleaseMixe by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -35,6 +37,8 @@ Retrieves single userNewReleaseMixe by id.
 ```https://openapi.tidal.com/v2/userNewReleaseMixes/{id}/relationships/items```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `r_usr`, `recommendations.read`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves items relationship.
 ##### Parameters

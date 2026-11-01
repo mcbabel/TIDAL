@@ -35,7 +35,7 @@
 ]
 ```
 
-### Get More Artists Of A Category (from web player code 2026-11, not live-tested)
+### Get More Artists Of A Category (verified 2026-11)
 ##### Method
 ```GET```
 ##### Url
@@ -64,7 +64,7 @@
 }
 ```
 
-### Save Selected Artists (from web player code 2026-11, not live-tested)
+### Save Selected Artists (from web player code 2026-11, not executed)
 * Stores the picked artists for personal recommendations.
 ##### Method
 ```POST```
@@ -75,3 +75,6 @@
 ##### Header
 ```authorization: Bearer {access_token}```\
 ```Content-Type: application/x-www-form-urlencoded```
+
+#### Update 2026-11: Test status
+`Save Selected Artists` was not executed: it overwrites the artist selection that TIDAL uses for recommendations, and the previous selection cannot be read back to restore it. All `GET` endpoints of this page are verified.

@@ -1,6 +1,6 @@
-Play queue in the cloud, used by TIDAL Connect, Sonos and other casting targets. Base url: `https://connectqueue.tidal.com/v1/`. All requests (from web player code 2026-11, not live-tested): ```authorization: Bearer {access_token}```, ```Content-Type: application/json```. Modifications need ```If-Match: {eTag}``` (ETag of the last response).
+Play queue in the cloud, used by TIDAL Connect, Sonos and other casting targets. Base url: `https://connectqueue.tidal.com/v1/`. All requests: ```authorization: Bearer {access_token}```, ```Content-Type: application/json```. Modifications need ```If-Match: {eTag}``` (ETag of the last response).
 
-### Create Queue (from web player code 2026-11, not live-tested)
+### Create Queue (endpoint verified 2026-11 without effect)
 * Response contains `id`, `items` (each with an `id`), `properties.position`, `repeat_mode`, `shuffled` and an `ETag` header.
 ##### Method
 ```POST```
@@ -31,7 +31,7 @@ Play queue in the cloud, used by TIDAL Connect, Sonos and other casting targets.
 }
 ```
 
-### Get Queue (from web player code 2026-11, not live-tested)
+### Get Queue (endpoint verified 2026-11 without effect)
 ##### Method
 ```GET```
 ##### Url
@@ -39,7 +39,7 @@ Play queue in the cloud, used by TIDAL Connect, Sonos and other casting targets.
 ##### Header
 ```authorization: Bearer {access_token}```
 
-### Get Queue Items (from web player code 2026-11, not live-tested)
+### Get Queue Items (endpoint verified 2026-11 without effect)
 * Response: `{"items": [...], "total": 123}`
 ##### Method
 ```GET```
@@ -48,7 +48,7 @@ Play queue in the cloud, used by TIDAL Connect, Sonos and other casting targets.
 ##### Header
 ```authorization: Bearer {access_token}```
 
-### Add Items (from web player code 2026-11, not live-tested)
+### Add Items (endpoint verified 2026-11 without effect)
 * `mode`: `append` | `prepend` (prepend without `item_id`). Max 100 items per request.
 ##### Method
 ```PUT```
@@ -65,7 +65,7 @@ Play queue in the cloud, used by TIDAL Connect, Sonos and other casting targets.
 }
 ```
 
-### Move Items (from web player code 2026-11, not live-tested)
+### Move Items (endpoint verified 2026-11 without effect)
 ##### Method
 ```PATCH```
 ##### Url
@@ -82,7 +82,7 @@ Play queue in the cloud, used by TIDAL Connect, Sonos and other casting targets.
 }
 ```
 
-### Remove Item (from web player code 2026-11, not live-tested)
+### Remove Item (endpoint verified 2026-11 without effect)
 ##### Method
 ```DELETE```
 ##### Url
@@ -90,7 +90,7 @@ Play queue in the cloud, used by TIDAL Connect, Sonos and other casting targets.
 ##### Header
 ```authorization: Bearer {access_token}```
 
-### Shuffle (from web player code 2026-11, not live-tested)
+### Shuffle (endpoint verified 2026-11 without effect)
 ##### Method
 ```PUT```
 ##### Url
@@ -105,7 +105,7 @@ Play queue in the cloud, used by TIDAL Connect, Sonos and other casting targets.
 }
 ```
 
-### Get Queue Content (from web player code 2026-11, not live-tested)
+### Get Queue Content (endpoint verified 2026-11 without effect)
 * Media metadata of the queue items: `{"items": [...], "offset": 0, "total": 123}`
 ##### Method
 ```GET```
@@ -113,3 +113,16 @@ Play queue in the cloud, used by TIDAL Connect, Sonos and other casting targets.
 ```https://connectqueue.tidal.com/v1/content/{queueId}?offset={offset}&limit=50```
 ##### Header
 ```authorization: Bearer {access_token}```
+
+#### Update 2026-11: Test status
+All 8 endpoints exist and were verified with a non-existent queue id or an invalid body (no queue was created or changed):
+
+| Endpoint | Result |
+|---|---|
+| `GET queues/{id}`, `GET queues/{id}/items`, `PUT queues/{id}/shuffle`, `GET content/{id}` | `404 {"error":"queue_not_found","error_description":"Could not find queue '...'"}` |
+| `PUT queues/{id}/items` with empty `items` | `400 input_validation_error: items size must be between 1 and 100` |
+| `PATCH queues/{id}/items` with empty `ids` | `400 input_validation_error: ids size must be between 1 and 100` |
+| `POST queues` with `{}` | `400 input_validation_error: shuffled must not be null, repeat_mode: invalid value` |
+| `DELETE queues/{id}/items/{itemId}` | `204` (idempotent) |
+
+Not done: creating a real queue. There is no endpoint to delete a queue, so a test queue would stay in the account and could show up on TIDAL Connect devices.

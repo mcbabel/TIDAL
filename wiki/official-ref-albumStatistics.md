@@ -19,6 +19,8 @@ Relationships (`include=`): `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** answered `404`. Expected: this relationship only exists for own (uploaded) content or the owner.
+
 Retrieves single albumStatistic by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -37,6 +39,8 @@ Retrieves single albumStatistic by id.
 ```https://openapi.tidal.com/v2/albumStatistics/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** answered `404`. Expected: this relationship only exists for own (uploaded) content or the owner.
 
 Retrieves owners relationship.
 ##### Parameters

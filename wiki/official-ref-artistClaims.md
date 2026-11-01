@@ -22,6 +22,8 @@ Relationships (`include=`): `acceptedArtists`, `owners`, `recommendedArtists`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple artistClaims by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -40,6 +42,8 @@ Retrieves multiple artistClaims by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/artistClaims```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Legal ownership claim for an artist profile or content. Claims are reviewed by TIDAL staff; a test claim would be a false claim.
 
 Creates a new artistClaim.
 ##### Parameters
@@ -74,6 +78,8 @@ Creates a new artistClaim.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `404` `NOT_FOUND: Artist claim not found`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Deletes existing artistClaim.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -90,6 +96,8 @@ Deletes existing artistClaim.
 ```https://openapi.tidal.com/v2/artistClaims/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. The account has no artist claims (creating one is not done, see `POST /artistClaims`).
 
 Retrieves single artistClaim by id.
 ##### Parameters
@@ -109,6 +117,8 @@ Retrieves single artistClaim by id.
 ```https://openapi.tidal.com/v2/artistClaims/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_REQUEST_BODY: Must not be null`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Updates existing artistClaim.
 ##### Parameters
@@ -142,6 +152,8 @@ Updates existing artistClaim.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The account has no artist claims (creating one is not done, see `POST /artistClaims`).
+
 Retrieves acceptedArtists relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -160,6 +172,8 @@ Retrieves acceptedArtists relationship.
 ```https://openapi.tidal.com/v2/artistClaims/{id}/relationships/acceptedArtists```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `404` `NOT_FOUND: Artist claim not found`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Accepts one recommended artist and processes the claim, merging profile metadata or moving claimed albums according to the recommendation. Empty data cancels the claim; it does not delete any artist. Returns an acknowledgement.
 ##### Parameters
@@ -193,6 +207,8 @@ Accepts one recommended artist and processes the claim, merging profile metadata
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The account has no artist claims (creating one is not done, see `POST /artistClaims`).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -210,6 +226,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/artistClaims/{id}/relationships/recommendedArtists```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. The account has no artist claims (creating one is not done, see `POST /artistClaims`).
 
 Retrieves recommendedArtists relationship.
 ##### Parameters

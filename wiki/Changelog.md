@@ -1,3 +1,8 @@
+#### 11-01-2026 (live test of everything)
+  - Live tested all documented endpoints with a real account; write tests with cleanup, account state verified identical afterwards. See [Test Report](TestReport).
+  - Private API: every original page now has an "Update 2026-11" status; newly verified: lyrics, similar albums, genre content, artist by handle, onboarding/early access, search history delete, add favorite playlist, cloud queue, AI chat, home tasks, checkout validation, Widevine endpoint, event batch.
+  - Official API: every one of the 438 operations has a "Live test 2026-11-01" line (266 verified with 2xx incl. 72 write tests, 40 documented errors, 47 endpoint checks with non-existent ids, 29 not executed with reason, 56 without object in the account).
+
 #### 11-01-2026 (complete coverage)
 Coverage check against the JavaScript of the web player (all API calls extracted) and the full official OpenAPI spec. See [Status of legacy endpoints](legacy-status) for the method and the remaining limits.
 

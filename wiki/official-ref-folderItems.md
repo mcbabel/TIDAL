@@ -18,6 +18,8 @@ Relationships (`include=`): `breadcrumb`, `owners`, `parent`, `subject`, `subjec
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Lists items in a folder, newest placement first. Select a folder with parent.id, or select your root with parent.isRoot=true and parent.owners.id=me. These forms cannot be combined; no other parent-filter combinations are supported. To search every folder in your tree instead, use query, subject.albums:published or both with parent.owners.id=me alone.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -43,6 +45,8 @@ Lists items in a folder, newest placement first. Select a folder with parent.id,
 ```https://openapi.tidal.com/v2/folderItems```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `201` (write test with cleanup).
 
 Creates a new folderItem.
 ##### Parameters
@@ -83,6 +87,8 @@ Creates a new folderItem.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
 
+**Live test 2026-11-01:** `400` `GENERIC_REQUEST_ERROR: Only references may be removed`. Folder items that hold a sub folder cannot be removed directly (`400 Only references may be removed`); deleting the folder removes them. Verified in the write test.
+
 Deletes existing folderItem.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -99,6 +105,8 @@ Deletes existing folderItem.
 ```https://openapi.tidal.com/v2/folderItems/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single folderItem by id.
 ##### Parameters
@@ -119,6 +127,8 @@ Retrieves single folderItem by id.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 The folders from the root to this item's parent; only for the tree's owner, empty otherwise.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -138,6 +148,8 @@ The folders from the root to this item's parent; only for the tree's owner, empt
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -156,6 +168,8 @@ Retrieves owners relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves parent relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -173,6 +187,8 @@ Retrieves parent relationship.
 ```https://openapi.tidal.com/v2/folderItems/{id}/relationships/parent```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Moves the item to the supplied parent folder, replacing its previous parent. To move to the top level, supply the root folder explicitly; null data is rejected. Returns the new parent linkage.
 ##### Parameters
@@ -201,6 +217,8 @@ Moves the item to the supplied parent folder, replacing its previous parent. To 
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves subject relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -218,6 +236,8 @@ Retrieves subject relationship.
 ```https://openapi.tidal.com/v2/folderItems/{id}/relationships/subjectSharingSettings```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves subjectSharingSettings relationship.
 ##### Parameters

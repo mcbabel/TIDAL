@@ -18,6 +18,8 @@ Relationships (`include=`): `priceChange`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple subscriptionPriceChangeDecisions by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -35,6 +37,8 @@ Retrieves multiple subscriptionPriceChangeDecisions by available filters, or wit
 ```https://openapi.tidal.com/v2/subscriptionPriceChangeDecisions```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Accepts or declines a price change of the subscription. Billing decision of the account owner.
 
 Creates a new subscriptionPriceChangeDecision.
 ##### Parameters
@@ -72,6 +76,8 @@ Creates a new subscriptionPriceChangeDecision.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Updates existing subscriptionPriceChangeDecision.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -101,6 +107,8 @@ Updates existing subscriptionPriceChangeDecision.
 ```https://openapi.tidal.com/v2/subscriptionPriceChangeDecisions/{id}/relationships/priceChange```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. Only exists when TIDAL announced a price change for the subscription; none for the account.
 
 Retrieves priceChange relationship.
 ##### Parameters

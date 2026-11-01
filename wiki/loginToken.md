@@ -15,3 +15,6 @@
   "authenticationToken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```
+
+#### Update 2026-11 (verified)
+Still works with an OAuth token (`200 {"authenticationToken": "..."}`). Only needed for the legacy `user_auth_token` grant, see [auth-token](auth-token#exchange-user-authenticationtoken-with-token).

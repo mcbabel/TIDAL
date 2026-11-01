@@ -15,6 +15,8 @@ A role describing an artist's contribution, such as performer or producer.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single artistRole by id.
 ##### Parameters
 | Name | In | Required | Type | Description |

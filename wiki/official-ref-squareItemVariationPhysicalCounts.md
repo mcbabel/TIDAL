@@ -17,6 +17,8 @@ A physical inventory count recorded in Square, identified by its count reference
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Commerce: prices, Square shop and Stripe payment accounts. Connects or changes real sales and payment accounts.
+
 Records a whole-unit physical stock count at occurredAt. Requires stock tracking at the selected site's shipping location (merchant-main fallback). While its replay receipt remains available, exact retries retain the original location and event time. Catalog revisions do not guard inventory counts.
 ##### Parameters
 | Name | In | Required | Type | Description |

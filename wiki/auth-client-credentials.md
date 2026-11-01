@@ -22,3 +22,6 @@
 #### Notes
 * Endpoints that need a user answer `403 {"errors":[{"code":"UNAUTHORIZED","detail":"Authenticated user is required"}]}` (verified 2026-11).
 * The web player uses a client credentials token for logged-out visitors.
+
+#### Update 2026-11: Test status
+Observed: the web player obtains a client credentials token for logged-out visitors (stored as `AuthDB/…_clientCredentials_PROD…`), and that token was used successfully for anonymous [Official API](OfficialAPI) requests (e.g. `GET /tracks/{id}`, `GET /searchResults`, `GET /trackManifests/{id}`). The token request itself was not sent manually: running a login flow needs the `client_id` (and for some flows the `client_secret`) of an app. The client ids of TIDAL's own apps are intentionally not used or published in this documentation ([API Keys](Copyright)), and no own developer app was registered for the test.

@@ -10,3 +10,6 @@
 ```
 204 No Content
 ````
+
+#### Update 2026-11 (verified)
+Still works: `200 OK` with empty body (tested with a playlist that was added via [add-favorites](user-add-favorite-playlist) before).

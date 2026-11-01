@@ -26,6 +26,8 @@ Relationships (`include=`): `albums`, `artists`, `credits`, `providers`, `replac
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple videos by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -47,6 +49,8 @@ Retrieves multiple videos by available filters, or without if applicable.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single video by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -66,6 +70,8 @@ Retrieves single video by id.
 ```https://openapi.tidal.com/v2/videos/{id}/relationships/albums```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves albums relationship.
 ##### Parameters
@@ -87,6 +93,8 @@ Retrieves albums relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves artists relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -107,6 +115,8 @@ Retrieves artists relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves credits relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -125,6 +135,8 @@ Retrieves credits relationship.
 ```https://openapi.tidal.com/v2/videos/{id}/relationships/providers```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves providers relationship.
 ##### Parameters
@@ -145,6 +157,8 @@ Retrieves providers relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves replacement relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -163,6 +177,8 @@ Retrieves replacement relationship.
 ```https://openapi.tidal.com/v2/videos/{id}/relationships/similarVideos```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves similarVideos relationship.
 ##### Parameters
@@ -184,6 +200,8 @@ Retrieves similarVideos relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves suggestedVideos relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -204,6 +222,8 @@ Retrieves suggestedVideos relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves thumbnailArt relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -222,6 +242,8 @@ Retrieves thumbnailArt relationship.
 ```https://openapi.tidal.com/v2/videos/{id}/relationships/usageRules```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves usageRules relationship.
 ##### Parameters

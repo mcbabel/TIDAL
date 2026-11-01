@@ -24,6 +24,8 @@ Relationships (`include=`): `owners`, `sharedResources`
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `400` `GENERIC_REQUEST_ERROR: Unsupported filter parameters: [filter[owners.id]]. Available: [filter[code]]`.
+
 Retrieves multiple shares by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -42,6 +44,8 @@ Retrieves multiple shares by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/shares```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `201` (write test with cleanup).
 
 Creates a new share.
 ##### Parameters
@@ -86,6 +90,8 @@ Creates a new share.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Delete share. Effectively revokes bearer access and acceptance.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -103,6 +109,8 @@ Delete share. Effectively revokes bearer access and acceptance.
 ```https://openapi.tidal.com/v2/shares/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single share by id.
 ##### Parameters
@@ -123,6 +131,8 @@ Retrieves single share by id.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -140,6 +150,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/shares/{id}/relationships/sharedResources```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves sharedResources relationship.
 ##### Parameters

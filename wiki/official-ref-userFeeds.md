@@ -16,6 +16,8 @@ The authenticated user's unread and seen state for each feed surface.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single userFeed by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -31,6 +33,8 @@ Retrieves single userFeed by id.
 ```https://openapi.tidal.com/v2/userFeeds/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Advances the supplied seen positions and returns the updated feed state.
 ##### Parameters

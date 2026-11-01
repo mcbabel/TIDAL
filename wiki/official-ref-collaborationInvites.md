@@ -20,6 +20,8 @@ Relationships (`include=`): `owners`, `subject`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple collaborationInvites by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -38,6 +40,8 @@ Retrieves multiple collaborationInvites by available filters, or without if appl
 ```https://openapi.tidal.com/v2/collaborationInvites```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `201` (write test with cleanup).
 
 Creates a new collaborationInvite.
 ##### Parameters
@@ -72,6 +76,8 @@ Creates a new collaborationInvite.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Deletes existing collaborationInvite.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -88,6 +94,8 @@ Deletes existing collaborationInvite.
 ```https://openapi.tidal.com/v2/collaborationInvites/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Retrieves single collaborationInvite by id.
 ##### Parameters
@@ -108,6 +116,8 @@ Retrieves single collaborationInvite by id.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -125,6 +135,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/collaborationInvites/{id}/relationships/subject```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Retrieves subject relationship.
 ##### Parameters

@@ -30,6 +30,8 @@ Relationships (`include=`): `collaboratorProfiles`, `collaborators`, `coverArt`,
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `playlists.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple playlists by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -53,6 +55,8 @@ Retrieves multiple playlists by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/playlists```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `201` (write test with cleanup).
 
 Creates a new playlist.
 ##### Parameters
@@ -85,6 +89,8 @@ Creates a new playlist.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Deletes existing playlist.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -101,6 +107,8 @@ Deletes existing playlist.
 ```https://openapi.tidal.com/v2/playlists/{id}```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single playlist by id.
 ##### Parameters
@@ -121,6 +129,8 @@ Retrieves single playlist by id.
 ```https://openapi.tidal.com/v2/playlists/{id}```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Updates existing playlist.
 ##### Parameters
@@ -154,6 +164,8 @@ Updates existing playlist.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_REQUEST_BODY: Size must be between 1 and 20`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Deletes item(s) from collaboratorProfiles relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -183,6 +195,8 @@ Deletes item(s) from collaboratorProfiles relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Deprecated. Use curators for attribution.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -200,6 +214,8 @@ Deprecated. Use curators for attribution.
 ```https://openapi.tidal.com/v2/playlists/{id}/relationships/collaborators```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
 
 Retrieves collaborators relationship.
 ##### Parameters
@@ -219,6 +235,8 @@ Retrieves collaborators relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves coverArt relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -237,6 +255,8 @@ Retrieves coverArt relationship.
 ```https://openapi.tidal.com/v2/playlists/{id}/relationships/coverArt```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_REQUEST_BODY: Must not be null`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Replaces the custom cover artwork selection with one attachable artwork. Empty data clears the custom selection. Previously attached uploaded artwork is soft-deleted unless system-managed. Returns an acknowledgement.
 ##### Parameters
@@ -270,6 +290,8 @@ Replaces the custom cover artwork selection with one attachable artwork. Empty d
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Artist profiles credited for the playlist
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -288,6 +310,8 @@ Artist profiles credited for the playlist
 ```https://openapi.tidal.com/v2/playlists/{id}/relationships/items```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Deletes item(s) from items relationship.
 ##### Parameters
@@ -321,6 +345,8 @@ Deletes item(s) from items relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves items relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -342,6 +368,8 @@ Retrieves items relationship.
 ```https://openapi.tidal.com/v2/playlists/{id}/relationships/items```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Incrementally moves the occurrences selected by data[].meta.itemId before meta.positionBefore, or to the end when meta is omitted. Preserves unselected memberships, their metadata and relative order; no items are added or removed. Empty data is rejected. Returns an acknowledgement.
 ##### Parameters
@@ -379,6 +407,8 @@ Incrementally moves the occurrences selected by data[].meta.itemId before meta.p
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Adds item(s) to items relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -415,6 +445,8 @@ Adds item(s) to items relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Deprecated. Use curators for attribution.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -433,6 +465,8 @@ Deprecated. Use curators for attribution.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -450,6 +484,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/playlists/{id}/relationships/suggestedCoverArts```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
 
 Retrieves suggestedCoverArts relationship.
 ##### Parameters

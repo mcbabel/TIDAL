@@ -16,6 +16,8 @@ Claim status for an artist profile.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `404`.
+
 Retrieves multiple artistClaimStatuses by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |

@@ -20,6 +20,8 @@ Relationships (`include=`): `items`, `owners`, `userCollection`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** answered `400` `GENERIC_REQUEST_ERROR: Unsupported filter parameters: [filter[owners.id]]. Available: [filter[id]]`.
+
 Retrieves multiple userCollectionFolders by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -38,6 +40,8 @@ Retrieves multiple userCollectionFolders by available filters, or without if app
 ```https://openapi.tidal.com/v2/userCollectionFolders```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `201` (write test with cleanup).
 
 Creates a new userCollectionFolder.
 ##### Parameters
@@ -75,6 +79,8 @@ Creates a new userCollectionFolder.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Deletes existing userCollectionFolder.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -91,6 +97,8 @@ Deletes existing userCollectionFolder.
 ```https://openapi.tidal.com/v2/userCollectionFolders/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single userCollectionFolder by id.
 ##### Parameters
@@ -110,6 +118,8 @@ Retrieves single userCollectionFolder by id.
 ```https://openapi.tidal.com/v2/userCollectionFolders/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Updates existing userCollectionFolder.
 ##### Parameters
@@ -141,6 +151,8 @@ Updates existing userCollectionFolder.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Deletes item(s) from items relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -170,6 +182,8 @@ Deletes item(s) from items relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves items relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -189,6 +203,8 @@ Retrieves items relationship.
 ```https://openapi.tidal.com/v2/userCollectionFolders/{id}/relationships/items```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Adds item(s) to items relationship.
 ##### Parameters
@@ -219,6 +235,8 @@ Adds item(s) to items relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -236,6 +254,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/userCollectionFolders/{id}/relationships/userCollection```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves userCollection relationship.
 ##### Parameters

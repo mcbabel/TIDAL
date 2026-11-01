@@ -24,3 +24,6 @@
 ```app_approval: true``` (the user approves the code inside a logged-in TIDAL app instead of on link.tidal.com; `verificationUriComplete` then looks like `https://tidal.com/approve/{code}`)
 
 `GET` on this endpoint answers `405 Method Not Allowed` (verified 2026-11).
+
+#### Update 2026-11: Test status
+Not executed. Running a login flow needs the `client_id` (and for some flows the `client_secret`) of an app. The client ids of TIDAL's own apps are intentionally not used or published in this documentation ([API Keys](Copyright)), and no own developer app was registered for the test. The endpoint itself was verified to exist (`GET` answers `405 Method Not Allowed`).

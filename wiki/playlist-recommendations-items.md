@@ -119,3 +119,7 @@
   ]
 }
 ```
+
+#### Update 2026-11 (verified)
+Still works (`200`), response format as above.
+Needs a user token (`401` with `x-tidal-token` only).

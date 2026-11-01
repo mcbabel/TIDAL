@@ -18,6 +18,8 @@ A playback manifest for a video, containing streaming URIs and format details.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `playback`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single videoManifest by id.
 ##### Parameters
 | Name | In | Required | Type | Description |

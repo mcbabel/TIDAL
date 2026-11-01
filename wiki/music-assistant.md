@@ -1,4 +1,4 @@
-### Init Chat (from web player code 2026-11, not live-tested)
+### Init Chat (verified 2026-11)
 * AI music assistant of the web player. Starts a chat in the context of the current page.
 * Follow-up messages: `POST https://api.tidal.com/v2/chat/`
 ##### Method
@@ -19,3 +19,4 @@
   "sourceType": "ALBUM"
 }
 ```
+* For accounts that are not part of the experiment the endpoint answers `400 {"detail":"User not enabled for AI chat experiment"}` (verified). The chat itself could not be tested with the test account for that reason.

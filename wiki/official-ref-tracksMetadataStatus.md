@@ -15,6 +15,8 @@ Status of metadata detection job for a track. Tracks the progress of async jobs 
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`.
+
 Retrieves single tracksMetadataStatu by id.
 ##### Parameters
 | Name | In | Required | Type | Description |

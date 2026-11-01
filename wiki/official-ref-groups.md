@@ -15,6 +15,8 @@ A platform-managed audience. The Everyone group includes eligible callers with o
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `404`.
+
 Retrieves multiple groups by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -30,6 +32,8 @@ Retrieves multiple groups by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/groups/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** not reached. The list answered `404`; no group ids are available to the account.
 
 Retrieves single group by id.
 ##### Parameters

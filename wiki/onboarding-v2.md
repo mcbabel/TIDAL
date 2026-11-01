@@ -10,7 +10,7 @@
 #### Example Response
 ```"https://offer.tidal.com/playlist/migration/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"```
 
-### Complete Home Task (from web player code 2026-11, not live-tested)
+### Complete Home Task (endpoint verified 2026-11)
 ##### Method
 ```POST```
 ##### Url
@@ -18,3 +18,4 @@
 ##### Header
 ```authorization: Bearer {access_token}```\
 ```x-tidal-client-version: {version}```
+* Verified with a non-existent task id (`200`, no visible effect). Not tested with a real task: completing a real home task hides it permanently and cannot be undone.

@@ -19,6 +19,8 @@ Relationships (`include=`): `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single artistBiographie by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -37,6 +39,8 @@ Retrieves single artistBiographie by id.
 ```https://openapi.tidal.com/v2/artistBiographies/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Updates existing artistBiographie.
 ##### Parameters
@@ -67,6 +71,8 @@ Updates existing artistBiographie.
 ```https://openapi.tidal.com/v2/artistBiographies/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
 
 Retrieves owners relationship.
 ##### Parameters

@@ -18,6 +18,8 @@ Relationships (`include=`): `items`, `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single userCollectionSaveForLater by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -36,6 +38,8 @@ Retrieves single userCollectionSaveForLater by id.
 ```https://openapi.tidal.com/v2/userCollectionSaveForLaters/{id}/relationships/items```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Deletes item(s) from items relationship.
 ##### Parameters
@@ -66,6 +70,8 @@ Deletes item(s) from items relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves items relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -84,6 +90,8 @@ Retrieves items relationship.
 ```https://openapi.tidal.com/v2/userCollectionSaveForLaters/{id}/relationships/items```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Adds item(s) to items relationship.
 ##### Parameters
@@ -113,6 +121,8 @@ Adds item(s) to items relationship.
 ```https://openapi.tidal.com/v2/userCollectionSaveForLaters/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves owners relationship.
 ##### Parameters

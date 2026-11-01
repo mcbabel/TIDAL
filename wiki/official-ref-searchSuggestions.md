@@ -19,6 +19,8 @@ Relationships (`include=`): `directHits`, `history`
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`, `search.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Searches for a query and returns a collection containing exactly one search suggestions resource.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -40,6 +42,8 @@ Searches for a query and returns a collection containing exactly one search sugg
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`, `search.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves directHits relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -60,6 +64,8 @@ Retrieves directHits relationship.
 ```https://openapi.tidal.com/v2/searchSuggestions/{id}/relationships/history```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`, `search.read`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Retrieves history relationship.
 ##### Parameters

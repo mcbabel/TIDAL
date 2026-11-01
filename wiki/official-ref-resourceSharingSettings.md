@@ -18,6 +18,8 @@ Relationships (`include=`): `grants`, `shares`, `subject`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Returns the sharing settings of up to 20 live access-core subjects. Subjects without a node, or that the caller does not own, return none.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -36,6 +38,8 @@ Returns the sharing settings of up to 20 live access-core subjects. Subjects wit
 ```https://openapi.tidal.com/v2/resourceSharingSettings/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single resourceSharingSetting by id.
 ##### Parameters
@@ -56,6 +60,8 @@ Retrieves single resourceSharingSetting by id.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Each grantee's strongest grant on the subject or a folder or album above it: the strongest role, then the nearest grant, then a direct grant over a saved link's, then the oldest. The owner comes first, then groups, then users. A grant's subject is the node it is on.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -75,6 +81,8 @@ Each grantee's strongest grant on the subject or a folder or album above it: the
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 The active share links on the subject or an album above it, or a folder above it whose link can be saved, next to expire first.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -93,6 +101,8 @@ The active share links on the subject or an album above it, or a folder above it
 ```https://openapi.tidal.com/v2/resourceSharingSettings/{id}/relationships/subject```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves subject relationship.
 ##### Parameters

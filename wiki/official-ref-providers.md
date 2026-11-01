@@ -15,6 +15,8 @@ A content provider or label that supplies music to TIDAL.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single provider by id.
 ##### Parameters
 | Name | In | Required | Type | Description |

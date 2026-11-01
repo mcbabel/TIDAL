@@ -1,5 +1,5 @@
 #### Example Request (verified 2026-11)
-* Content of a genre: `GET genres/{path}/{playlists|artists|albums|tracks|videos}?countryCode={country}`
+* Content of a genre (verified): `GET genres/{path}/{playlists|artists|albums|tracks|videos}?countryCode={country}`. `path` from this list, e.g. `Pop`. Unknown paths answer `404 "Category not found"`.
 ##### Method
 ```GET```
 ##### Url

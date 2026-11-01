@@ -24,6 +24,8 @@ Relationships (`include=`): `artist`
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `r_usr`, `user.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single user by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -42,6 +44,8 @@ Retrieves single user by id.
 ```https://openapi.tidal.com/v2/users/{id}/relationships/artist```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
+
+**Live test 2026-11-01:** answered `404`.
 
 Retrieves artist relationship.
 ##### Parameters

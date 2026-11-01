@@ -24,6 +24,8 @@ Relationships (`include=`): `subject`, `viewer`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Returns viewer contexts for up to 20 original subjects. Duplicate subjects are returned once.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -42,6 +44,8 @@ Returns viewer contexts for up to 20 original subjects. Duplicate subjects are r
 ```https://openapi.tidal.com/v2/viewerContexts/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single viewerContext by id.
 ##### Parameters
@@ -62,6 +66,8 @@ Retrieves single viewerContext by id.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Returns the subject of this viewer context.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -79,6 +85,8 @@ Returns the subject of this viewer context.
 ```https://openapi.tidal.com/v2/viewerContexts/{id}/relationships/viewer```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Returns the authenticated viewer of this context.
 ##### Parameters

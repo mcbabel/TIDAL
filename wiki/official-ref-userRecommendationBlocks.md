@@ -16,6 +16,8 @@ Relationships (`include=`): `artists`, `owners`, `tracks`, `videos`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`, `recommendations.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single userRecommendationBlock by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -35,6 +37,8 @@ Retrieves single userRecommendationBlock by id.
 ```https://openapi.tidal.com/v2/userRecommendationBlocks/{id}/relationships/artists```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Deletes item(s) from artists relationship.
 ##### Parameters
@@ -65,6 +69,8 @@ Deletes item(s) from artists relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`, `recommendations.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves artists relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -83,6 +89,8 @@ Retrieves artists relationship.
 ```https://openapi.tidal.com/v2/userRecommendationBlocks/{id}/relationships/artists```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Adds item(s) to artists relationship.
 ##### Parameters
@@ -113,6 +121,8 @@ Adds item(s) to artists relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`, `recommendations.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -130,6 +140,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/userRecommendationBlocks/{id}/relationships/tracks```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Deletes item(s) from tracks relationship.
 ##### Parameters
@@ -160,6 +172,8 @@ Deletes item(s) from tracks relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`, `recommendations.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves tracks relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -178,6 +192,8 @@ Retrieves tracks relationship.
 ```https://openapi.tidal.com/v2/userRecommendationBlocks/{id}/relationships/tracks```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Adds item(s) to tracks relationship.
 ##### Parameters
@@ -208,6 +224,8 @@ Adds item(s) to tracks relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Deletes item(s) from videos relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -237,6 +255,8 @@ Deletes item(s) from videos relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`, `recommendations.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves videos relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -255,6 +275,8 @@ Retrieves videos relationship.
 ```https://openapi.tidal.com/v2/userRecommendationBlocks/{id}/relationships/videos```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Adds item(s) to videos relationship.
 ##### Parameters

@@ -15,6 +15,8 @@ A user's appreciation of a piece of content.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Sends an appreciation to an artist. The artist sees it, it cannot be taken back.
+
 Creates a new appreciation.
 ##### Parameters
 | Name | In | Required | Type | Description |

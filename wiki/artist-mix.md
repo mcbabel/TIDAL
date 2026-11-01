@@ -13,3 +13,6 @@
   "id": "00008ded8a6682c338c2fbabd6619f"
 }
 ```
+
+#### Update 2026-11 (verified)
+Still works (`200`), response format as above.

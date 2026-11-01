@@ -18,6 +18,8 @@ Relationships (`include=`): `items`, `owners`
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single userCollectionAlbum by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -37,6 +39,8 @@ Retrieves single userCollectionAlbum by id.
 ```https://openapi.tidal.com/v2/userCollectionAlbums/{id}/relationships/items```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Deletes item(s) from items relationship.
 ##### Parameters
@@ -67,6 +71,8 @@ Deletes item(s) from items relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves items relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -88,6 +94,8 @@ Retrieves items relationship.
 ```https://openapi.tidal.com/v2/userCollectionAlbums/{id}/relationships/items```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Adds item(s) to items relationship.
 ##### Parameters
@@ -120,6 +128,8 @@ Adds item(s) to items relationship.
 ```https://openapi.tidal.com/v2/userCollectionAlbums/{id}/relationships/owners```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves owners relationship.
 ##### Parameters

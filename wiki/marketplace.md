@@ -35,7 +35,7 @@
 }
 ```
 
-### Checkout (from web player code 2026-11, not live-tested)
+### Checkout (endpoint verified 2026-11, no purchase)
 * Starts the purchase of an upload (Stripe). Return url: `https://tidal.com/marketplace/checkout/return`.
 ##### Method
 ```POST```
@@ -44,7 +44,7 @@
 ##### Header
 ```authorization: Bearer {access_token}```
 
-### Seller Balance / Payouts (from web player code 2026-11, not live-tested)
+### Seller Balance / Payouts (balance verified 2026-11; payouts not executed)
 * Payout: `POST marketplace/v1/sellers/payouts`. Stripe onboarding: `POST https://api.tidal.com/v2/v1/sellers/stripe`, dashboard link: `POST .../v1/sellers/stripe/dashboard`. Payout terms: `POST marketplace/spotlight/v1/user/payout-terms`.
 ##### Method
 ```GET```
@@ -54,7 +54,7 @@
 ```authorization: Bearer {access_token}```\
 ```x-tidal-authenticated-userid: {userId}```
 
-### Cash App Contributions (from web player code 2026-11, not live-tested)
+### Cash App Contributions (customer verified 2026-11; connect/disconnect not executed)
 * Artist tips via Cash App: `POST`/`DELETE marketplace/v1/cashapp/authorize`, `PATCH marketplace/v1/cashapp/contributions?contributionsEnabled=true|false`, `GET marketplace/v1/cashapp/contributions/{id}/links`.
 ##### Method
 ```GET```
@@ -63,3 +63,8 @@
 ##### Header
 ```authorization: Bearer {access_token}```\
 ```x-tidal-authenticated-userid: {userId}```
+
+#### Update 2026-11: Test status
+* **Checkout**: only verified with an empty body (`400 {"detail":"Validation failure"}`). A real checkout starts a purchase with real money and was not executed.
+* **Seller balance**: `404` for an account without seller account (verified). Payouts, Stripe and Cash App onboarding were not executed: they connect or move real payment accounts and money.
+* **Cash App customer**: `GET marketplace/v1/cashapp/customer` answers `200` with `userId`, `status`, `contributionsEnabled`, `cashtag`, `contributionLinkUrl` (verified).

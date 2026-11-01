@@ -34,6 +34,8 @@ Relationships (`include=`): `albums`, `artists`, `credits`, `download`, `genres`
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple tracks by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -58,6 +60,8 @@ Retrieves multiple tracks by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/tracks```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Creates uploads (albums, tracks, audio source files, artwork) on TIDAL. Needs real media files and the rights to publish them; uploads can become visible to other users.
 
 Creates a new track.
 ##### Parameters
@@ -115,6 +119,8 @@ Creates a new track.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Deletes existing track.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -132,6 +138,8 @@ Deletes existing track.
 ```https://openapi.tidal.com/v2/tracks/{id}```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single track by id.
 ##### Parameters
@@ -153,6 +161,8 @@ Retrieves single track by id.
 ```https://openapi.tidal.com/v2/tracks/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Updates existing track.
 ##### Parameters
@@ -204,6 +214,8 @@ Updates existing track.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves albums relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -224,6 +236,8 @@ Retrieves albums relationship.
 ```https://openapi.tidal.com/v2/tracks/{id}/relationships/albums```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Moves the uploaded track to the supplied album, replacing its previous album association. Exactly one album is required; empty data cannot clear it. Returns an acknowledgement.
 ##### Parameters
@@ -258,6 +272,8 @@ Moves the uploaded track to the supplied album, replacing its previous album ass
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves artists relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -278,6 +294,8 @@ Retrieves artists relationship.
 ```https://openapi.tidal.com/v2/tracks/{id}/relationships/artists```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a positive integer`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Sets the track's artists, replacing the current list. Artists are listed in the order given. Provide 1 to 10 distinct artists. You can add your own artist profile and the profiles of users who have owner or collaborator access to the track or its album. Only the track's owner can change its artists. Returns an acknowledgement.
 ##### Parameters
@@ -312,6 +330,8 @@ Sets the track's artists, replacing the current list. Artists are listed in the 
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves credits relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -332,6 +352,8 @@ Retrieves credits relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves download relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -349,6 +371,8 @@ Retrieves download relationship.
 ```https://openapi.tidal.com/v2/tracks/{id}/relationships/genres```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves genres relationship.
 ##### Parameters
@@ -370,6 +394,8 @@ Retrieves genres relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves lyrics relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -390,6 +416,8 @@ Retrieves lyrics relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves metadataStatus relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -407,6 +435,8 @@ Retrieves metadataStatus relationship.
 ```https://openapi.tidal.com/v2/tracks/{id}/relationships/owners```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
 
 Retrieves owners relationship.
 ##### Parameters
@@ -427,6 +457,8 @@ Retrieves owners relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves priceConfig relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -445,6 +477,8 @@ Retrieves priceConfig relationship.
 ```https://openapi.tidal.com/v2/tracks/{id}/relationships/providers```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves providers relationship.
 ##### Parameters
@@ -466,6 +500,8 @@ Retrieves providers relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves radio relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -485,6 +521,8 @@ Retrieves radio relationship.
 ```https://openapi.tidal.com/v2/tracks/{id}/relationships/replacement```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves replacement relationship.
 ##### Parameters
@@ -506,6 +544,8 @@ Retrieves replacement relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
+
 The track's share links, active and expired, newest first.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -525,6 +565,8 @@ The track's share links, active and expired, newest first.
 ```https://openapi.tidal.com/v2/tracks/{id}/relationships/similarTracks```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves similarTracks relationship.
 ##### Parameters
@@ -547,6 +589,8 @@ Retrieves similarTracks relationship.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves sourceFile relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -564,6 +608,8 @@ Retrieves sourceFile relationship.
 ```https://openapi.tidal.com/v2/tracks/{id}/relationships/suggestedTracks```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves suggestedTracks relationship.
 ##### Parameters
@@ -586,6 +632,8 @@ Retrieves suggestedTracks relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves trackStatistics relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -603,6 +651,8 @@ Retrieves trackStatistics relationship.
 ```https://openapi.tidal.com/v2/tracks/{id}/relationships/usageRules```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves usageRules relationship.
 ##### Parameters

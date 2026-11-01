@@ -28,3 +28,6 @@ Client → Server when the user starts playback:
 Server → Client:
 + `PRIVILEGED_SESSION_NOTIFICATION` with `payload.clientDisplayName`: another device took over, the player pauses
 + `RECONNECT`: reconnect (request a new url)
+
+#### Update 2026-11: Test status
+`rt/connect` verified (`200`, WebSocket url). The WebSocket messages are taken from the web player code. They were not provoked on purpose, because that needs a second device that starts playback on the same account.

@@ -29,7 +29,7 @@
 ]
 ```
 
-### Set Onboarding Step (from web player code 2026-11, not live-tested)
+### Set Onboarding Step (verified 2026-11)
 ##### Method
 ```POST```
 ##### Url
@@ -37,11 +37,12 @@
 ##### Url-Encoded POST Parameter
 ```key: {key}```\
 ```value: true```
+* Tested by setting a key that was already `true` again (`200`, no change).
 ##### Header
 ```authorization: Bearer {access_token}```\
 ```Content-Type: application/x-www-form-urlencoded```
 
-### Set Early Access Program (from web player code 2026-11, not live-tested)
+### Set Early Access Program (verified 2026-11)
 * Opts the user in or out of TIDAL's early access (beta) program. `GET` answers `405` (verified 2026-11). The current state is `earlyAccessProgram` in [Get User](user).
 ##### Method
 ```POST```
@@ -49,6 +50,7 @@
 ```https://api.tidal.com/v1/users/{userId}/earlyAccessProgram?countryCode={country}```
 ##### Url-Encoded POST Parameter
 ```active: true|false```
+* Tested by sending the current value again (`200`, no change).
 ##### Header
 ```authorization: Bearer {access_token}```\
 ```Content-Type: application/x-www-form-urlencoded```

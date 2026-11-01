@@ -20,6 +20,8 @@ Relationships (`include=`): `collection`, `item`, `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** answered `400` `MISSING_REQUIRED_PARAMETER: At least one filter is required`.
+
 Retrieves multiple offlineTasks by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -40,6 +42,8 @@ Retrieves multiple offlineTasks by available filters, or without if applicable.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. Offline tasks belong to an installation; the account has none.
+
 Retrieves single offlineTask by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -58,6 +62,8 @@ Retrieves single offlineTask by id.
 ```https://openapi.tidal.com/v2/offlineTasks/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Updates existing offlineTask.
 ##### Parameters
@@ -89,6 +95,8 @@ Updates existing offlineTask.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. Offline tasks belong to an installation; the account has none.
+
 Retrieves collection relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -107,6 +115,8 @@ Retrieves collection relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. Offline tasks belong to an installation; the account has none.
+
 Retrieves item relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -124,6 +134,8 @@ Retrieves item relationship.
 ```https://openapi.tidal.com/v2/offlineTasks/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. Offline tasks belong to an installation; the account has none.
 
 Retrieves owners relationship.
 ##### Parameters

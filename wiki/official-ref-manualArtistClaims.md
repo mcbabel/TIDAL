@@ -35,6 +35,8 @@ A manual artist claim submitted with identity verification details.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Legal ownership claim for an artist profile or content. Claims are reviewed by TIDAL staff; a test claim would be a false claim.
+
 Creates a new manualArtistClaim.
 ##### Parameters
 | Name | In | Required | Type | Description |

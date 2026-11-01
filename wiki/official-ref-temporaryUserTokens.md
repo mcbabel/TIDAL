@@ -16,6 +16,8 @@ Relationships (`include=`): `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Creates temporary login tokens for the account (new credentials).
+
 Creates a new temporaryUserToken.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -41,6 +43,8 @@ Creates a new temporaryUserToken.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The account has no temporary tokens (creating one is not done, see `POST /temporaryUserTokens`).
+
 Retrieves single temporaryUserToken by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -58,6 +62,8 @@ Retrieves single temporaryUserToken by id.
 ```https://openapi.tidal.com/v2/temporaryUserTokens/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. The account has no temporary tokens (creating one is not done, see `POST /temporaryUserTokens`).
 
 Retrieves owners relationship.
 ##### Parameters

@@ -22,6 +22,8 @@ Relationships (`include=`): `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Creates uploads (albums, tracks, audio source files, artwork) on TIDAL. Needs real media files and the rights to publish them; uploads can become visible to other users.
+
 Create a track source file. <p/> The response contains a upload link that must be used to upload the actual content.<p/> The headers in the upload link response must be sent doing the actual upload.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -61,6 +63,8 @@ Create a track source file. <p/> The response contains a upload link that must b
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** answered `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a valid UUID`.
+
 Retrieves single trackSourceFile by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -78,6 +82,8 @@ Retrieves single trackSourceFile by id.
 ```https://openapi.tidal.com/v2/trackSourceFiles/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** answered `500` `INTERNAL_SERVER_ERROR: Internal server error`.
 
 Retrieves owners relationship.
 ##### Parameters

@@ -31,3 +31,6 @@
 ``` yaml
 {"mimeType":"video/mp4","codecs":"avc1.42001e,mp4a.40.2","encryptionType":"NONE","urls":["https://vb-pr-fa.video.tidal.com/something"]}
 ```
+
+#### Update 2026-11 (verified with user token)
+Still works. The response is the video variant: `videoId`, `streamType`, `assetPresentation`, `videoQuality`, `manifestMimeType` (`application/vnd.tidal.emu`), `manifestHash`, `manifest`.

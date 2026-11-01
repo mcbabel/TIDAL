@@ -18,6 +18,8 @@ Relationships (`include=`): `children`, `owners`, `parent`, `preview`, `shares`
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple folders by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -37,6 +39,8 @@ Retrieves multiple folders by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/folders```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `201` (write test with cleanup).
 
 Creates a new folder.
 ##### Parameters
@@ -74,6 +78,8 @@ Creates a new folder.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Deletes existing folder.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -91,6 +97,8 @@ Deletes existing folder.
 ```https://openapi.tidal.com/v2/folders/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single folder by id.
 ##### Parameters
@@ -111,6 +119,8 @@ Retrieves single folder by id.
 ```https://openapi.tidal.com/v2/folders/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Updates existing folder.
 ##### Parameters
@@ -143,6 +153,8 @@ Updates existing folder.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Lists folder items newest first by placement timestamp, with ID as a stable tie-breaker. Moving to another parent resets the timestamp; renaming preserves it.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -163,6 +175,8 @@ Lists folder items newest first by placement timestamp, with ID as a stable tie-
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -181,6 +195,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/folders/{id}/relationships/parent```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves parent relationship.
 ##### Parameters
@@ -201,6 +217,8 @@ Retrieves parent relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 The first four items of this folder, as `children` lists them.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -220,6 +238,8 @@ The first four items of this folder, as `children` lists them.
 ```https://openapi.tidal.com/v2/folders/{id}/relationships/shares```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `collection.read`, `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 The folder's share links, active and expired, newest first.
 ##### Parameters

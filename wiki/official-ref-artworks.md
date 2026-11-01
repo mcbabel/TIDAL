@@ -20,6 +20,8 @@ Relationships (`include=`): `owners`
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple artworks by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -38,6 +40,8 @@ Retrieves multiple artworks by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/artworks```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Creates uploads (albums, tracks, audio source files, artwork) on TIDAL. Needs real media files and the rights to publish them; uploads can become visible to other users.
 
 Creates a new artwork.
 ##### Parameters
@@ -71,6 +75,8 @@ Creates a new artwork.
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single artwork by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -89,6 +95,8 @@ Retrieves single artwork by id.
 ```https://openapi.tidal.com/v2/artworks/{id}/relationships/owners```
 ##### Access
 Tier: `THIRD_PARTY` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
 
 Retrieves owners relationship.
 ##### Parameters

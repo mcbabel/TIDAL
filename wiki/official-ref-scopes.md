@@ -18,6 +18,8 @@ An OAuth scope that a client may request from end users.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple scopes by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |

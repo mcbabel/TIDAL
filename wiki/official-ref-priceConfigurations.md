@@ -16,6 +16,8 @@ Pricing configuration for purchasable content.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `400` `MISSING_REQUIRED_PARAMETER: At least one filter is required`.
+
 Retrieves multiple priceConfigurations by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -31,6 +33,8 @@ Retrieves multiple priceConfigurations by available filters, or without if appli
 ```https://openapi.tidal.com/v2/priceConfigurations```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Commerce: prices, Square shop and Stripe payment accounts. Connects or changes real sales and payment accounts.
 
 Creates a new priceConfiguration.
 ##### Parameters
@@ -70,6 +74,8 @@ Creates a new priceConfiguration.
 ```https://openapi.tidal.com/v2/priceConfigurations/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** not reached. Commerce object; none exists for the account.
 
 Retrieves single priceConfiguration by id.
 ##### Parameters

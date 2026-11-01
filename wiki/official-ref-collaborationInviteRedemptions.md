@@ -15,6 +15,8 @@ Deprecated compatibility view of accepting a COLLABORATOR playlist share. Use `s
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
 
+**Live test 2026-11-01:** not executed. Joins another user's playlist. Needs an invite code from a different account.
+
 Creates a new collaborationInviteRedemption.
 ##### Parameters
 | Name | In | Required | Type | Description |

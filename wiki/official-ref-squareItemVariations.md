@@ -23,6 +23,8 @@ Relationships (`include=`): `artworks`, `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Atomic operations are only used to create Square shop catalog items (selling merchandise), see Square below.
+
 Commits a supported group of resource creations together. Only add operations without ref or href are supported. Local linkage must reference an earlier creation. Each resource's mutation policy applies. After a timeout or server error, retry unchanged with the original Idempotency-Key. Replay is bounded by downstream receipt and idempotency retention.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -69,6 +71,8 @@ Commits a supported group of resource creations together. Only add operations wi
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Commerce: prices, Square shop and Stripe payment accounts. Connects or changes real sales and payment accounts.
+
 Adds a fixed-price variation at the end of the item's display order, preserving all existing variations and their pricing modes. After a timeout or `5xx`, retry unchanged with the original Idempotency-Key. Replay protection is bounded by receipt availability and Square's idempotency retention.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -112,6 +116,8 @@ Adds a fixed-price variation at the end of the item's display order, preserving 
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Deletes this variation by ID without a revision precondition, preserving its siblings. The last variation cannot be deleted; delete the item instead. Returns an acknowledgement; read the parent item for its current revision. After a timeout or `5xx`, retry unchanged with the original Idempotency-Key. Replay protection is bounded by receipt availability and Square's idempotency retention.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -128,6 +134,8 @@ Deletes this variation by ID without a revision precondition, preserving its sib
 ```https://openapi.tidal.com/v2/squareItemVariations/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. Commerce (Square shop); none exists for the account.
 
 Retrieves single squareItemVariation by id.
 ##### Parameters
@@ -146,6 +154,8 @@ Retrieves single squareItemVariation by id.
 ```https://openapi.tidal.com/v2/squareItemVariations/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Updates the variation's global name or its price and stock tracking at the selected site's shipping location, with merchant-main fallback. Stock quantity is changed through physical-count submissions. Price changes require existing positive fixed pricing at that location; name and stock tracking preserve other pricing modes. After a timeout or `5xx`, retry unchanged with the original Idempotency-Key. Replay protection is bounded by receipt availability and Square's idempotency retention.
 ##### Parameters
@@ -182,6 +192,8 @@ Updates the variation's global name or its price and stock tracking at the selec
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. Commerce (Square shop); none exists for the account.
+
 Artworks of the variation's Square catalog images in Square's display order. An image Square has no URL for stays in the list and its artwork has no files. Returns the variation revision the list was read at.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -199,6 +211,8 @@ Artworks of the variation's Square catalog images in Square's display order. An 
 ```https://openapi.tidal.com/v2/squareItemVariations/{id}/relationships/artworks```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Replaces the variation's photos with the complete ordered list. Omitted photos are detached and stay in the seller's Square catalog; an empty list clears them. The first artwork is the primary photo. Duplicate artwork IDs are rejected. Uploaded TIDAL JPEG artworks, at most 15,000,000 bytes, are copied to Square and attached under new artwork IDs; their originals stay unchanged. Existing Square artworks must belong to this seller and are attached directly; they need not be the item's photos. Returns the complete resulting linkage in display order and the committed variation revision. Copies may remain in Square if the replacement fails. Retry unchanged with the original Idempotency-Key after a timeout or 5xx. Recovery is bounded by Marketplace receipts and Square's idempotency retention, and can be blocked if the variation is deleted or a source becomes unavailable or ineligible. Read the variation again to reconcile its current state.
 ##### Parameters
@@ -232,6 +246,8 @@ Replaces the variation's photos with the complete ordered list. Omitted photos a
 ```https://openapi.tidal.com/v2/squareItemVariations/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. Commerce (Square shop); none exists for the account.
 
 Retrieves owners relationship.
 ##### Parameters

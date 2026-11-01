@@ -16,6 +16,8 @@ Relationships (`include=`): `items`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`, `recommendations.read`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves single userOfflineMixe by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -35,6 +37,8 @@ Retrieves single userOfflineMixe by id.
 ```https://openapi.tidal.com/v2/userOfflineMixes/{id}/relationships/items```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`, `recommendations.read`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves items relationship.
 ##### Parameters

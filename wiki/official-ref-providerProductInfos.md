@@ -21,6 +21,8 @@ Relationships (`include=`): `provider`, `subject`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple providerProductInfos by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -43,6 +45,8 @@ Retrieves multiple providerProductInfos by available filters, or without if appl
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The list answered `200` without data for the tested provider.
+
 Retrieves provider relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -59,6 +63,8 @@ Retrieves provider relationship.
 ```https://openapi.tidal.com/v2/providerProductInfos/{id}/relationships/subject```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. The list answered `200` without data for the tested provider.
 
 Retrieves subject relationship.
 ##### Parameters

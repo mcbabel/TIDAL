@@ -213,3 +213,6 @@
 ```refresh_token: {refresh_token}```\
 ```grant_type: update_client```\
 ```scope: r_usr+w_usr+w_sub```
+
+#### Update 2026-11: Test status
+Not executed. Running a login flow needs the `client_id` (and for some flows the `client_secret`) of an app. The client ids of TIDAL's own apps are intentionally not used or published in this documentation ([API Keys](Copyright)), and no own developer app was registered for the test. The token responses are taken from the official TIDAL SDK (`tidal-sdk-web`, auth module) and python-tidal.

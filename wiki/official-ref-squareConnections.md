@@ -21,6 +21,8 @@ Relationships (`include=`): `selectedSite`, `sites`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Commerce: prices, Square shop and Stripe payment accounts. Connects or changes real sales and payment accounts.
+
 Creates a new squareConnection.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -50,6 +52,8 @@ Creates a new squareConnection.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. Commerce (Square shop); none exists for the account.
+
 Retrieves single squareConnection by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -68,6 +72,8 @@ Retrieves single squareConnection by id.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. Commerce (Square shop); none exists for the account.
+
 Retrieves selectedSite relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -84,6 +90,8 @@ Retrieves selectedSite relationship.
 ```https://openapi.tidal.com/v2/squareConnections/{id}/relationships/selectedSite```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be a Base62-encoded user ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Replaces the selected Square site. Explicit null data clears the selection without deleting the site. Returns the selected site linkage, or null data when cleared.
 ##### Parameters
@@ -111,6 +119,8 @@ Replaces the selected Square site. Explicit null data clears the selection witho
 ```https://openapi.tidal.com/v2/squareConnections/{id}/relationships/sites```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. Commerce (Square shop); none exists for the account.
 
 Retrieves sites relationship.
 ##### Parameters

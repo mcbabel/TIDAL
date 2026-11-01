@@ -15,6 +15,8 @@ A completed acceptance of a share's offered role.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Saves a share link of another user. Needs a share code from a different account, and there is no endpoint to remove a saved share.
+
 Redeem an active share with VOUCHER access mode for its offered role. A share without VOUCHER mode returns 403.
 ##### Parameters
 | Name | In | Required | Type | Description |

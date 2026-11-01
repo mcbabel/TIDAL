@@ -23,6 +23,8 @@ Relationships (`include=`): `playlist`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Retrieves multiple playlistGenerationSchedules by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -41,6 +43,8 @@ Retrieves multiple playlistGenerationSchedules by available filters, or without 
 ```https://openapi.tidal.com/v2/playlistGenerationSchedules```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `201` (write test with cleanup).
 
 Creates a new playlistGenerationSchedule.
 ##### Parameters
@@ -79,6 +83,8 @@ Creates a new playlistGenerationSchedule.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Deletes existing playlistGenerationSchedule.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -95,6 +101,8 @@ Deletes existing playlistGenerationSchedule.
 ```https://openapi.tidal.com/v2/playlistGenerationSchedules/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.read`, `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Retrieves single playlistGenerationSchedule by id.
 ##### Parameters
@@ -114,6 +122,8 @@ Retrieves single playlistGenerationSchedule by id.
 ```https://openapi.tidal.com/v2/playlistGenerationSchedules/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Updates existing playlistGenerationSchedule.
 ##### Parameters
@@ -145,6 +155,8 @@ Updates existing playlistGenerationSchedule.
 ```https://openapi.tidal.com/v2/playlistGenerationSchedules/{id}/relationships/playlist```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.read`, `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Retrieves playlist relationship.
 ##### Parameters

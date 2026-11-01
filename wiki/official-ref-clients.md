@@ -23,6 +23,8 @@ Relationships (`include=`): `certificates`, `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple clients by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -40,6 +42,8 @@ Retrieves multiple clients by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/clients```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Creates API credentials (client id + secret) or TIDAL Connect partner certificates for the account.
 
 Creates a new client.
 ##### Parameters
@@ -70,6 +74,8 @@ Creates a new client.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `404` `NOT_FOUND: Clients '{id}' not found`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Deletes existing client.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -86,6 +92,8 @@ Deletes existing client.
 ```https://openapi.tidal.com/v2/clients/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single client by id.
 ##### Parameters
@@ -104,6 +112,8 @@ Retrieves single client by id.
 ```https://openapi.tidal.com/v2/clients/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `404` `NOT_FOUND: Clients '{id}' not found`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Updates existing client.
 ##### Parameters
@@ -142,6 +152,8 @@ Updates existing client.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** answered `403` `UNAUTHORIZED: TIDAL Connect partner access is required`.
+
 Retrieves certificates relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -159,6 +171,8 @@ Retrieves certificates relationship.
 ```https://openapi.tidal.com/v2/clients/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves owners relationship.
 ##### Parameters

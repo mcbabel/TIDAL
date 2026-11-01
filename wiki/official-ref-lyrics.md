@@ -21,6 +21,8 @@ Relationships (`include=`): `owners`, `track`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Only allowed for the owner of the track (own uploads). The test account owns no tracks.
+
 Creates a new lyric.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -62,6 +64,8 @@ Creates a new lyric.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Deletes existing lyric.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -78,6 +82,8 @@ Deletes existing lyric.
 ```https://openapi.tidal.com/v2/lyrics/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single lyric by id.
 ##### Parameters
@@ -97,6 +103,8 @@ Retrieves single lyric by id.
 ```https://openapi.tidal.com/v2/lyrics/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Updates existing lyric.
 ##### Parameters
@@ -129,6 +137,8 @@ Updates existing lyric.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** answered `404` `NOT_FOUND: Resource not found`. Expected: this relationship only exists for own (uploaded) content or the owner.
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -146,6 +156,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/lyrics/{id}/relationships/track```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves track relationship.
 ##### Parameters

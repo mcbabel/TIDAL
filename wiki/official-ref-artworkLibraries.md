@@ -17,6 +17,8 @@ Relationships (`include=`): `artworks`, `randomArtwork`
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple artworkLibraries by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -34,6 +36,8 @@ Retrieves multiple artworkLibraries by available filters, or without if applicab
 ```https://openapi.tidal.com/v2/artworkLibraries/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** not reached. No artwork library exists for the account (`/artworkLibraries/me` answers `404`).
 
 Retrieves single artworkLibrarie by id.
 ##### Parameters
@@ -53,6 +57,8 @@ Retrieves single artworkLibrarie by id.
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** not reached. No artwork library exists for the account (`/artworkLibraries/me` answers `404`).
+
 Artworks in the library that have finished processing and are not flagged or taken down, newest first
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -70,6 +76,8 @@ Artworks in the library that have finished processing and are not flagged or tak
 ```https://openapi.tidal.com/v2/artworkLibraries/{id}/relationships/randomArtwork```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** not reached. No artwork library exists for the account (`/artworkLibraries/me` answers `404`).
 
 A random artwork from the library, used by clients to supply a default artwork, for example for albums without cover art. Picked per request from the artworks that have finished processing and are not flagged or taken down, and not stored; empty when there are none
 ##### Parameters

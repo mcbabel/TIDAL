@@ -23,6 +23,8 @@ Relationships (`include=`): `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** not executed. Creates API credentials (client id + secret) or TIDAL Connect partner certificates for the account.
+
 Creates a new clientCertificate.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -56,6 +58,8 @@ Creates a new clientCertificate.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. TIDAL Connect partner only (`403 TIDAL Connect partner access is required`).
+
 Retrieves single clientCertificate by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -73,6 +77,8 @@ Retrieves single clientCertificate by id.
 ```https://openapi.tidal.com/v2/clientCertificates/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. TIDAL Connect partner only (`403 TIDAL Connect partner access is required`).
 
 Retrieves owners relationship.
 ##### Parameters

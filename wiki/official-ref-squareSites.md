@@ -19,6 +19,8 @@ Relationships (`include=`): `items`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be Base62 encoded`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Removes the items from the site; they stay in the catalog. Items not published and repeated items are left alone. An item missing from the catalog fails the request before anything changes.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -48,6 +50,8 @@ Removes the items from the site; they stay in the catalog. Items not published a
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. Commerce (Square shop); none exists for the account.
+
 Items published in the site, in title order. Missing catalog scopes return MISSING_ITEMS_SCOPE. A page can be short or empty and still have a next cursor.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -65,6 +69,8 @@ Items published in the site, in title order. Missing catalog scopes return MISSI
 ```https://openapi.tidal.com/v2/squareSites/{id}/relationships/items```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID: Must be Base62 encoded`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Publishes the items in the site. Items already published and repeated items are left alone. An item missing from the catalog fails the request before anything changes.
 ##### Parameters

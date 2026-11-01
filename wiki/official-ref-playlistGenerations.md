@@ -21,6 +21,8 @@ Relationships (`include=`): `baseGeneration`, `playlist`, `trackPreferences`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Retrieves multiple playlistGenerations by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -40,6 +42,8 @@ Retrieves multiple playlistGenerations by available filters, or without if appli
 ```https://openapi.tidal.com/v2/playlistGenerations```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `201` (write test with cleanup).
 
 Creates a new playlistGeneration.
 ##### Parameters
@@ -84,6 +88,8 @@ Creates a new playlistGeneration.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Retrieves single playlistGeneration by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -103,6 +109,8 @@ Retrieves single playlistGeneration by id.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Retrieves baseGeneration relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -121,6 +129,8 @@ Retrieves baseGeneration relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Retrieves playlist relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -138,6 +148,8 @@ Retrieves playlist relationship.
 ```https://openapi.tidal.com/v2/playlistGenerations/{id}/relationships/trackPreferences```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Removes feedback for one track without removing the track from the playlist. An absent entry is unchanged. Returns an acknowledgement; read the relationship again for its current preference version. Requires the current meta.preferenceVersion as meta.expectedPreferenceVersion; stale versions return 409.
 ##### Parameters
@@ -171,6 +183,8 @@ Removes feedback for one track without removing the track from the playlist. An 
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.read`, `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Retrieves trackPreferences relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -189,6 +203,8 @@ Retrieves trackPreferences relationship.
 ```https://openapi.tidal.com/v2/playlistGenerations/{id}/relationships/trackPreferences```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Incrementally updates feedback for one existing track preference, leaving other entries unchanged. Empty data is rejected; a missing entry returns 409. Returns the complete preference snapshot. Requires the current meta.preferenceVersion as meta.expectedPreferenceVersion; stale versions return 409.
 ##### Parameters
@@ -225,6 +241,8 @@ Incrementally updates feedback for one existing track preference, leaving other 
 ```https://openapi.tidal.com/v2/playlistGenerations/{id}/relationships/trackPreferences```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `playlists.write`, `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Adds feedback for one track. An existing entry is unchanged, including its preference. Returns the complete preference snapshot. All writes require the current meta.preferenceVersion as meta.expectedPreferenceVersion; stale versions return 409.
 ##### Parameters

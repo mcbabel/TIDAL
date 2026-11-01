@@ -17,6 +17,8 @@ Relationships (`include=`): `grantee`, `subject`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Lists stored grants from every source visible to the subject's owner or named user grantee, selected by subject or grantee, optionally restricted by assigned role. Requires subject or grantee.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -38,6 +40,8 @@ Lists stored grants from every source visible to the subject's owner or named us
 ```https://openapi.tidal.com/v2/resourceGrants```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** answered `400` `GENERIC_REQUEST_ERROR: Owned-content grant management is not enabled for this owner`.
 
 Creates a new resourceGrant.
 ##### Parameters
@@ -81,6 +85,8 @@ Creates a new resourceGrant.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
+
 Deletes existing resourceGrant.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -97,6 +103,8 @@ Deletes existing resourceGrant.
 ```https://openapi.tidal.com/v2/resourceGrants/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves single resourceGrant by id.
 ##### Parameters
@@ -116,6 +124,8 @@ Retrieves single resourceGrant by id.
 ```https://openapi.tidal.com/v2/resourceGrants/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Updates existing resourceGrant.
 ##### Parameters
@@ -147,6 +157,8 @@ Updates existing resourceGrant.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves grantee relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -164,6 +176,8 @@ Retrieves grantee relationship.
 ```https://openapi.tidal.com/v2/resourceGrants/{id}/relationships/subject```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves subject relationship.
 ##### Parameters

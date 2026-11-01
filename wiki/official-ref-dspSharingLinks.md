@@ -20,6 +20,8 @@ Relationships (`include=`): `subject`
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple dspSharingLinks by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -40,6 +42,8 @@ Retrieves multiple dspSharingLinks by available filters, or without if applicabl
 ```https://openapi.tidal.com/v2/dspSharingLinks/{id}/relationships/subject```
 ##### Access
 Tier: `INTERNAL` · Auth: Client Credentials, Authorization Code + PKCE
+
+**Live test 2026-11-01:** ✅ `200` (read).
 
 Retrieves subject relationship.
 ##### Parameters

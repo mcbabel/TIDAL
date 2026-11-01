@@ -20,6 +20,8 @@ Relationships (`include=`): `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple stripeConnections by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -37,6 +39,8 @@ Retrieves multiple stripeConnections by available filters, or without if applica
 ```https://openapi.tidal.com/v2/stripeConnections```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Commerce: prices, Square shop and Stripe payment accounts. Connects or changes real sales and payment accounts.
 
 Creates a new stripeConnection.
 ##### Parameters
@@ -72,6 +76,8 @@ Creates a new stripeConnection.
 ```https://openapi.tidal.com/v2/stripeConnections/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. Commerce (Stripe); none exists for the account.
 
 Retrieves owners relationship.
 ##### Parameters

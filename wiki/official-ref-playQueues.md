@@ -22,6 +22,8 @@ Relationships (`include=`): `changeEventStream`, `current`, `future`, `owners`, 
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple playQueues by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -41,6 +43,8 @@ Retrieves multiple playQueues by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/playQueues```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `201` (write test with cleanup).
 
 Creates a new playQueue.
 ##### Parameters
@@ -67,6 +71,8 @@ Creates a new playQueue.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Deletes existing playQueue.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -83,6 +89,8 @@ Deletes existing playQueue.
 ```https://openapi.tidal.com/v2/playQueues/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Retrieves single playQueue by id.
 ##### Parameters
@@ -102,6 +110,8 @@ Retrieves single playQueue by id.
 ```https://openapi.tidal.com/v2/playQueues/{id}```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Atomically applies attributes, future items, then current selection.
 ##### Parameters
@@ -159,6 +169,8 @@ Atomically applies attributes, future items, then current selection.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Retrieves changeEventStream relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -175,6 +187,8 @@ Retrieves changeEventStream relationship.
 ```https://openapi.tidal.com/v2/playQueues/{id}/relationships/current```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Retrieves current relationship.
 ##### Parameters
@@ -193,6 +207,8 @@ Retrieves current relationship.
 ```https://openapi.tidal.com/v2/playQueues/{id}/relationships/current```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Sets the current item to the existing queue occurrence identified by data.meta.itemId, changing which entries are past and future. Null data is rejected. Optional position and updatedByInstallationId must be supplied together. Returns the current item linkage and queue revision.
 ##### Parameters
@@ -226,6 +242,8 @@ Sets the current item to the existing queue occurrence identified by data.meta.i
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Removes the future occurrences selected by data[].meta.itemId without deleting their tracks or videos. Other queue entries are preserved. Returns an acknowledgement.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -258,6 +276,8 @@ Removes the future occurrences selected by data[].meta.itemId without deleting t
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Retrieves future relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -276,6 +296,8 @@ Retrieves future relationship.
 ```https://openapi.tidal.com/v2/playQueues/{id}/relationships/future```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Incrementally moves existing future occurrences selected by data[].meta.itemId, in their current queue order, before meta.positionBefore. Preserves memberships and unselected entries' metadata and relative order. Empty data is rejected. Returns empty data and meta.revision as an acknowledgement.
 ##### Parameters
@@ -312,6 +334,8 @@ Incrementally moves existing future occurrences selected by data[].meta.itemId, 
 ```https://openapi.tidal.com/v2/playQueues/{id}/relationships/future```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Omitting top-level meta or setting it to null defaults to REPLACE_ALL, replacing future entries. Use ADD_TO_FRONT, ADD_TO_BACK or ADD_BEFORE in meta.mode to add without replacing existing entries. ADD_BEFORE requires meta.positionBefore. REPLACE_ALL_AND_CURRENT replaces future entries; ADD_TO_FRONT_REPLACE_CURRENT prepends entries. Both select the first newly inserted entry in the active queue order as current, which may differ from request order when shuffled. With empty data and no source, replacement modes clear future entries; the current entry is unchanged when no entries are inserted. With meta.source, startIndex selects an entry in the first page's data before unsupported types are skipped. Tracks and videos are added in page order, retaining duplicates; other types are skipped without expansion. Reaching 1000 added items or 100 pages queues the collected prefix. Invalid sources or indexes, a suffix with no playable items, repeated pages, and read failures encountered before a cap leave the queue unchanged. Returns empty data and meta.revision as an acknowledgement.
 ##### Parameters
@@ -355,6 +379,8 @@ Omitting top-level meta or setting it to null defaults to REPLACE_ALL, replacing
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
+
 Retrieves owners relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -372,6 +398,8 @@ Retrieves owners relationship.
 ```https://openapi.tidal.com/v2/playQueues/{id}/relationships/past```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** ✅ `200` (write test with cleanup).
 
 Retrieves past relationship.
 ##### Parameters

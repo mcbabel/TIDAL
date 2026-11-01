@@ -18,6 +18,8 @@ Relationships (`include=`): `offlineInventory`, `owners`
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** ✅ `200` (read).
+
 Retrieves multiple installations by available filters, or without if applicable.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -38,6 +40,8 @@ Retrieves multiple installations by available filters, or without if applicable.
 ```https://openapi.tidal.com/v2/installations```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** not executed. Registers a device installation for offline downloads. There is no endpoint to delete an installation again.
 
 Creates a new installation.
 ##### Parameters
@@ -68,6 +72,8 @@ Creates a new installation.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The account has no installations (the web player does not register one; creating one is not done, see `POST /installations`).
+
 Retrieves single installation by id.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -86,6 +92,8 @@ Retrieves single installation by id.
 ```https://openapi.tidal.com/v2/installations/{id}/relationships/offlineInventory```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Deletes item(s) from offlineInventory relationship.
 ##### Parameters
@@ -116,6 +124,8 @@ Deletes item(s) from offlineInventory relationship.
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
 
+**Live test 2026-11-01:** not reached. The account has no installations (the web player does not register one; creating one is not done, see `POST /installations`).
+
 Retrieves offlineInventory relationship.
 ##### Parameters
 | Name | In | Required | Type | Description |
@@ -137,6 +147,8 @@ Retrieves offlineInventory relationship.
 ```https://openapi.tidal.com/v2/installations/{id}/relationships/offlineInventory```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `w_usr`
+
+**Live test 2026-11-01:** endpoint verified with a non-existent id (no change possible): `400` `INVALID_RESOURCE_ID: Invalid resource ID`. Not executed for real: it changes content, profiles or settings the test account does not own.
 
 Adds item(s) to offlineInventory relationship.
 ##### Parameters
@@ -166,6 +178,8 @@ Adds item(s) to offlineInventory relationship.
 ```https://openapi.tidal.com/v2/installations/{id}/relationships/owners```
 ##### Access
 Tier: `INTERNAL` · Auth: Authorization Code + PKCE · Scopes: `r_usr`
+
+**Live test 2026-11-01:** not reached. The account has no installations (the web player does not register one; creating one is not done, see `POST /installations`).
 
 Retrieves owners relationship.
 ##### Parameters
