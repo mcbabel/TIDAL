@@ -81,3 +81,6 @@
   ]
 }
 ```
+
+#### Update 2026-11: Android app (verified)
+* The Android app loads `home/feed/{vibe}` with `platform=ANDROID`. Without `platform` the v2 page endpoints answer `400 Bad Request`.

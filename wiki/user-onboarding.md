@@ -54,3 +54,7 @@
 ##### Header
 ```authorization: Bearer {access_token}```\
 ```Content-Type: application/x-www-form-urlencoded```
+
+#### Update 2026-11: Android app (verified)
+* `POST v1/users/{userId}/onboarding/list` sets several flags at once. The keys are sent as **repeated** fields (`keys=A&keys=B`); a comma separated value creates one key with that literal name.
+* `DELETE v1/users/{userId}/onboarding` removes all flags (`200`). Restore by posting the keys again.

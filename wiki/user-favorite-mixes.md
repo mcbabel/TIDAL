@@ -71,3 +71,6 @@
 * Pagination is cursor based now: the response is `{"items": [...], "cursor": "..."}`. Pass `cursor={cursor}` to get the next page.
 * Header ```x-tidal-client-version: {version}``` is needed.
 * Only the ids: `GET https://api.tidal.com/v2/favorites/mixes/ids?limit=500&cursor=&countryCode={country}` → `{"content": [...], "cursor": null}`
+
+#### Update 2026-11: Android app (verified)
+* The Android app manages mixes with [My Collection v2](my-collection-v2) (`my-collection/mixes/…`). The v1 `users/{id}/favorites/mixes` answers `404`.

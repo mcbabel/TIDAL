@@ -125,3 +125,6 @@
 * Still works with `x-tidal-token`. Optional: `types=ARTISTS,ALBUMS,TRACKS,VIDEOS,PLAYLISTS`, `limit`, `offset`.
 * The response additionally contains `topHit`: `{"value": {...}, "type": "ARTISTS"}`.
 * The TIDAL apps now use [Search v2](search-v2).
+
+#### Update 2026-11: Android app (verified)
+* The Android app uses the v1 search (`search`, `search/{type}`) and [`search/top-hits`](search-top-hits).

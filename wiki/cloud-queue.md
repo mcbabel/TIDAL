@@ -126,3 +126,7 @@ All 8 endpoints exist and were verified with a non-existent queue id or an inval
 | `DELETE queues/{id}/items/{itemId}` | `204` (idempotent) |
 
 Not done: creating a real queue. There is no endpoint to delete a queue, so a test queue would stay in the account and could show up on TIDAL Connect devices.
+
+#### Update 2026-11: Android app (verified)
+* `GET https://connectqueue.tidal.com/v1/` (API info) answers `200` with `max_queue_paging_limit` and `max_queue_size`.
+* Sonos uses its own host: `POST https://sonos.tidal.com/v1/sonos/cloudqueue/items/{groupId}` (JSON body) uploads the item list to a Sonos group. Verified to exist (`400` validation error without data); not executed because it needs a Sonos group.

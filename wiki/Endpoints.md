@@ -332,3 +332,6 @@
 
 ###### Official TIDAL API
 [List of all Official API Endpoints](official-endpoints)
+
+###### Android app
+All 271 private endpoints of the Android app (incl. the ones only the app uses, e.g. `my-activity`, `my-collection/albums|artists|mixes`, `profiles`, `follow`, `tasks`, `googleplay`, `broadcasts`) with test status: [List of all Android Endpoints](android-endpoints)

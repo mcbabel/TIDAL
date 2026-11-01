@@ -1,3 +1,9 @@
+#### 11-01-2026 (Android app)
+  - Analysed the TIDAL Android app 2.215.0 (Play Store build): hosts, headers, interceptors, login, Play Integrity, see [Android](Android)
+  - [List of all Android Endpoints](android-endpoints): 271 private operations with live test status; the 390 official API operations of the app are all in the public spec
+  - Created Entries: My Activity, My Collection v2 (albums, artists, mixes), Profiles & Follow, Playlist v2 extras, Setup Guide, Upload & Creator, Offline (Android), Google Play / Operator, App URLs, Mix Metadata, Search Top Hits, User Progress, Video Credits / Recommendations, DJ Broadcast PlaybackInfo, Account Changes, Experiments & Feature Flags
+  - Updated: Sessions, Cloud Queue (Sonos), Event Batch (pulsar), Streaming Privileges, DRM, Authorization Code + PKCE (Android redirect), User Onboarding, Home Feed (platform parameter), Search, Favorite Mixes, Video PlaybackInfoPostPaywall, Status of legacy endpoints
+
 #### 11-01-2026 (DRM and playback)
   - Widevine verified in Google Chrome: service certificate and license request on `api.tidal.com/v2/widevine` (key status `usable`), see [DRM](drm)
   - Found: official `trackManifests` are Widevine encrypted for every format of full tracks; the web player plays through the official API; `playbackinfo` stays unencrypted

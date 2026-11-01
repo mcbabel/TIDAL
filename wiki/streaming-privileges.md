@@ -44,3 +44,6 @@ While the web player was playing, playback was started on a second device of the
 }
 ```
 The player paused immediately and showed "Playback was paused because you are playing something on Web". `clientDisplayName` is the name of the device that took over, `sessionId` identifies its session. The client did not send `USER_ACTION` in this test (it is sent on certain user interactions only).
+
+#### Update 2026-11: Android app (verified)
+* The Android app can pass its session: `POST https://api.tidal.com/v1/rt/connect?sessionId={sessionId}` (`200`, same `url` response).

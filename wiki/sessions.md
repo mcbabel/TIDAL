@@ -22,3 +22,7 @@
   }
 }
 ```
+
+#### Update 2026-11: Android app (verified)
+* `GET https://api.tidal.com/v1/sessions/{sessionId}` returns the same object for a given session id (`200`).
+* The Android app also exchanges legacy `session_id`s for OAuth tokens, see [Android](Android).

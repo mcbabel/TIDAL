@@ -64,3 +64,7 @@ Response: `200`, `application/octet-stream`, 710 bytes. After `MediaKeySession.u
 The player does not request the service certificate separately; it sends the license challenge directly. The next track's manifest is requested ahead of time.
 
 Logged out (preview): the same `trackManifests` call with the client credentials token returns an unencrypted preview, there is no license request, no `rt/connect`, and events go to `https://tidal.com/api/public/event-batch`.
+
+#### Update 2026-11: Android app (verified)
+* The app sends Widevine license requests to the `licenseUrl` of the manifest (`DrmLicenseService`, url as parameter).
+* The legacy `POST https://api.tidal.com/v1/drm/licenses/widevine` is still referenced by the app but answers `500` (empty body test).

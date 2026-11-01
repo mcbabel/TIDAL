@@ -41,3 +41,6 @@
 * Still works. `GET videos/{id}/playbackinfo` is an alias with the same parameters and response.
 * The response additionally contains `manifestHash`.
 * The decoded `application/vnd.tidal.emu` manifest is JSON: `{"mimeType":"application/vnd.apple.mpegurl","urls":["https://im-fa.manifest.tidal.com/1/manifests/....m3u8?..."]}` (HLS).
+
+#### Update 2026-11: Android app (verified)
+* The Android app still uses this endpoint for videos, with the Url parameters `playbackmode`, `assetpresentation`, `videoquality`, `streamingsessionid` and `playlistuuid` (`200`).

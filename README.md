@@ -22,6 +22,9 @@ I deeply discourage you from building and distributing copyright-infringing apps
 
 #### Changelog
 
+11-01-2026 (Android):
+  - Complete documentation of the TIDAL Android app API (2.215.0): overview, all 271 private endpoints with live test status, new pages for Android-only features (wiki/Android.md, wiki/android-endpoints.md)
+
 11-01-2026 (live tested):
   - Every endpoint was tested live with a real account (write tests with cleanup); results and reasons for the few untested ones in the Test Report (wiki/TestReport.md)
 

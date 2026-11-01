@@ -29,6 +29,39 @@ Not executed in the private API, and why:
 | FairPlay | Needs Safari with Apple's FairPlay CDM (macOS/iOS). Not available on the Linux test machine. |
 | Facebook, Amazon, handover token | See [Status of legacy endpoints](legacy-status). |
 
+#### Android app (com.aspiro.tidal 2.215.0)
+The app was pulled from the test account owner's phone (Play Store install) with `adb`. All 271 private API operations were extracted from its Retrofit interfaces and called against the live API with the same account (Android query parameters `platform=ANDROID`, `deviceType=PHONE`; the requests used the account's session of the web player, because the client id of the app is not used in this documentation).
+
+| Result | Operations |
+|---|---|
+| ✅ Verified (`2xx`, incl. write tests with cleanup) | 182 |
+| ⚠️ Answered with an error documented on the page (e.g. feature disabled for the account, non-existent id, removed endpoint, server error) | 20 |
+| 🔎 Endpoint verified without effect (non-existent id / invalid body) | 11 |
+| Not executed (reason in the list) | 43 |
+| Not reached (no object of this type in the account) | 7 |
+| n/a (generic url call without fixed endpoint) | 8 |
+
+All 390 official API operations of the app are part of the official spec and covered by the official API tests below. Details per endpoint: [List of all Android Endpoints](android-endpoints).
+
+Not executed in the Android API, and why (in addition to the web list above):
+
+| Endpoints | Why not |
+|---|---|
+| `my-collection/playlists/set-public/all` | Would make all private playlists of the account public. |
+| `profile/profile-name`, `profile/social-handles`, `profile/onboarded`, `profile/picture` | Change the public profile of the account; the old values (no profile name, no picture) cannot be restored exactly or the change cannot be undone. |
+| `users/{id}` (POST: EULA, profile name, account data), `users/{id}/email/verify`, `email-change` | Change personal account data, accept the EULA or send emails. |
+| `users/{id}/clients/offline`, offline albums/playlists | Need a device client of an app installation with offline rights; the account had none. |
+| `report/offlineplays`, `api/event-batch` (pulsar) | Would add fake plays or events to TIDAL's statistics. |
+| `play/autologin`, `registration/play`, `ipt`, `oauth2/*` | Login and token flows: need a signed operator JWT or the app's client id, or issue new login credentials. |
+| `upload/terms` (POST), `users/{id}/contentCreatorInfo` (POST), marketplace, Stripe, Cash App | Accept legal terms or connect/move real payment accounts and money. |
+| `welcome/users/artists` | Overwrites the taste profile used for recommendations. |
+| Experiments / feature flags (`/1.0/…`) | Block's experimentation backend; host is set at runtime and not identified; tracking calls would write analytics data. |
+
+Also found during the Android test:
+* `onboarding/list` takes repeated `keys` fields; a comma separated value created one wrong flag during the test, which was removed again (all 22 onboarding flags are identical to before).
+* `users/{id}/handovertoken` was called once by the automatic GET run (`200`, token not printed or stored).
+* Search suggestions requests added the test search term to the search history; it was deleted again.
+
 #### Official API (openapi.tidal.com/v2), 438 operations
 | Result | Operations |
 |---|---|

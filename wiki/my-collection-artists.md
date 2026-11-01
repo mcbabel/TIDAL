@@ -33,3 +33,6 @@
   "cursor": null
 }
 ```
+
+#### Update 2026-11: Android app (verified)
+* The Android app uses `GET https://api.tidal.com/v2/my-collection/artists/folders` and the add/remove/folder endpoints described in [My Collection v2](my-collection-v2).
