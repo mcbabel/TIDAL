@@ -66,3 +66,7 @@ All qualities (LOW to HI_RES_LOSSLESS) were delivered as MPEG DASH with fragment
 | 4033 | Content not available for your subscription |
 
 Only one device can stream at the same time, see [Streaming Privileges](streaming-privileges). DRM licenses: see [DRM](drm).
+
+#### Update 2026-11: web player and DRM (verified)
+* The current web player no longer uses this endpoint for playback. It loads [`trackManifests`](official-trackManifests) of the official API, which are Widevine encrypted (see [DRM](drm)).
+* `playbackinfo` still answers with **unencrypted** DASH manifests for the web client. For Dolby Atmos tracks it returns a stereo stream (`audioMode: STEREO`).

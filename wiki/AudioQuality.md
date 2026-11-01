@@ -50,3 +50,8 @@ Tracks and albums have a `mediaMetadata.tags` field listing the available qualit
 
 ##### Official API
 The [Official TIDAL API](OfficialAPI) uses formats instead: ```HEAACV1```, ```AACLC```, ```FLAC```, ```FLAC_HIRES```, ```EAC3_JOC``` (Dolby Atmos), see [Get TrackManifest](official-trackManifests).
+
+##### Dolby Atmos (Update 2026-11, verified)
+* Atmos versions are separate albums and tracks (`audioModes: ["DOLBY_ATMOS"]`, `mediaMetadata.tags: ["DOLBY_ATMOS"]`), e.g. album `187935269`.
+* Official API: `trackManifests` with `formats=EAC3_JOC` returns E-AC-3 JOC (`ec-3`, about 769 kbps, 48 kHz), Widevine encrypted.
+* Private API `playbackinfo` (web client): falls back to a stereo stream.

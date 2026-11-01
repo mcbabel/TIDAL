@@ -1,3 +1,9 @@
+#### 11-01-2026 (DRM and playback)
+  - Widevine verified in Google Chrome: service certificate and license request on `api.tidal.com/v2/widevine` (key status `usable`), see [DRM](drm)
+  - Found: official `trackManifests` are Widevine encrypted for every format of full tracks; the web player plays through the official API; `playbackinfo` stays unencrypted
+  - Dolby Atmos: separate albums/tracks, `EAC3_JOC` via the official API (E-AC-3 JOC, ~769 kbps, 48 kHz)
+  - Full playback flow captured; one-stream rule verified with a second device (`PRIVILEGED_SESSION_NOTIFICATION`, see [Streaming Privileges](streaming-privileges))
+
 #### 11-01-2026 (live test of everything)
   - Live tested all documented endpoints with a real account; write tests with cleanup, account state verified identical afterwards. See [Test Report](TestReport).
   - Private API: every original page now has an "Update 2026-11" status; newly verified: lyrics, similar albums, genre content, artist by handle, onboarding/early access, search history delete, add favorite playlist, cloud queue, AI chat, home tasks, checkout validation, Widevine endpoint, event batch.

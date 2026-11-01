@@ -61,3 +61,17 @@
  + previewReason: `FULL_REQUIRES_SUBSCRIPTION` | `FULL_REQUIRES_PURCHASE` | `FULL_REQUIRES_HIGHER_ACCESS_TIER`
  + drmData (only if DRM protected): `drmSystem` (`WIDEVINE` | `FAIRPLAY`), `licenseUrl`, `certificateUrl`, `initData`
  + Videos: `GET /videoManifests/{videoId}?uriScheme={enum}&usage={enum}`
+
+#### Update 2026-11 (verified with a Premium account)
+* Full tracks are **Widevine encrypted for every format** (also stereo FLAC/AAC). Example `drmData`:
+``` yaml
+"drmData": {
+  "drmSystem": "WIDEVINE",
+  "licenseUrl": "https://api.tidal.com/v2/widevine",
+  "certificateUrl": "https://api.tidal.com/v2/widevine"
+}
+```
+* With `adaptive=true` the MPD contains all requested formats as one adaptive ladder, e.g. `FLAC_HIRES,44100,24`, `FLAC,44100,16`, `AACLC`, `HEAACV1`.
+* Dolby Atmos: request `formats=EAC3_JOC` for an Atmos track. Atmos versions are separate albums/tracks with `audioModes: ["DOLBY_ATMOS"]` (e.g. track `187935270`). Result: one representation `EAC3_JOC`, `codecs="ec-3"`, about 769 kbps, 48 kHz, Widevine encrypted.
+* The web player requests: `GET /trackManifests/{id}?adaptive=true&formats=HEAACV1&formats=AACLC&formats=FLAC&formats=FLAC_HIRES&manifestType=MPEG_DASH&uriScheme=DATA&usage=PLAYBACK` (formats as repeated parameters).
+* Previews are not encrypted. See [DRM](drm) for the license request.

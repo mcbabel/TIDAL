@@ -12,6 +12,7 @@ Live test of the whole documentation on **2026-11-01** with a real TIDAL account
 | ✅ Verified (write with cleanup) | Favorites add/delete (tracks, albums, artists, videos, playlists, mixes), playlist create (v1 + v2) / rename / add / move / replace / delete item / delete, public/private, My Collection folders (create, rename, move, remove), blocks, search history delete, onboarding flag and early access (same value again), feed seen |
 | 🔎 Endpoint verified without effect | Cloud queue (connectqueue.tidal.com, fake queue id / invalid body), Widevine license (empty body), checkout (empty body), home task (fake id), AI chat (not enabled for the account) |
 | 👀 Observed in the web player traffic | `tidal.com/api/event-batch`, `tidal.com/api/public/event-batch` |
+| ✅ Verified with a Widevine capable Google Chrome (remote controlled via DevTools protocol, separate profile) | Widevine service certificate and license (`api.tidal.com/v2/widevine`, key status `usable`), full DRM playback flow, Dolby Atmos manifests (`EAC3_JOC`), one-stream rule: `PRIVILEGED_SESSION_NOTIFICATION` received when a second device started playback |
 
 Not executed in the private API, and why:
 
@@ -25,8 +26,7 @@ Not executed in the private API, and why:
 | Offline endpoints (`users/{id}/clients/{clientId}/offline/...`) | Need a mobile/desktop client with offline downloads; the account has none. |
 | Cloud queue (create a real queue) | There is no endpoint to delete a queue; it could show up on TIDAL Connect devices. |
 | Marketplace payouts, Stripe, Cash App, checkout | Move or connect real money and payment accounts. |
-| FairPlay | Needs Safari with Apple's FairPlay CDM. |
-| Widevine with a real challenge | No DRM protected stream was delivered to the test account, so there was no license challenge. |
+| FairPlay | Needs Safari with Apple's FairPlay CDM (macOS/iOS). Not available on the Linux test machine. |
 | Facebook, Amazon, handover token | See [Status of legacy endpoints](legacy-status). |
 
 #### Official API (openapi.tidal.com/v2), 438 operations
@@ -109,3 +109,5 @@ Not reached (no object of this type in the account), grouped by resource:
 * The official `PATCH /playlists/{id}` response can still contain the old attributes; the next `GET` shows the new values.
 * AI playlist generation (`POST /playlistGenerations`) takes about 30-60 seconds (`status: PROCESSING` → `OK`). A generation schedule can only be created after the first generation is done (`409` before).
 * Track preferences of a generation use optimistic locking: send the current `meta.preferenceVersion` as `meta.expectedPreferenceVersion`, otherwise `409`.
+* Full tracks from the official `trackManifests` are Widevine encrypted for every format (also stereo FLAC). The current web player plays through the official API and therefore needs Widevine (`S6001` in browsers without it). The private `playbackinfo` still returns unencrypted streams. See [DRM](drm).
+* The built-in browser of the test machine had no Widevine CDM; the DRM tests ran in a separate, remote controlled Google Chrome instance with its own profile, which was deleted afterwards.
